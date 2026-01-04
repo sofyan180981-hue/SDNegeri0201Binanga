@@ -449,9 +449,12 @@
                             <p class="text-gray-600 mb-6">SD Negeri 0201 Binanga membuka pendaftaran siswa baru. Silakan isi formulir atau hubungi sekolah.</p>
                             <h3 class="font-bold text-lg text-red-600 mb-3">Persyaratan Umum:</h3>
                             <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
-                                <li>Usia minimal 6 tahun.</li>
-                                <li>Fotokopi Akta & KK.</li>
-                                <li>Pas Foto 3x4.</li>
+                                <li>Berusia minimal 6 tahun pada tanggal 1 Juli tahun berjalan.</li>
+                                <li>Fotokopi Akta Kelahiran (2 lembar).</li>
+                                <li>Fotokopi Kartu Keluarga (KK) (2 lembar).</li>
+                                <li>Fotokopi KTP Orang Tua (Ayah & Ibu).</li>
+                                <li>Pas Foto ukuran 3x4 latar merah (4 lembar).</li>
+                                <li>Ijazah TK/PAUD (jika ada).</li>
                             </ul>
                         </div>
                         <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
@@ -470,28 +473,172 @@
         </div>
 
         <div id="page-galeri" class="page-content hidden">
-            <div class="bg-red-700 py-16 text-white text-center"><h1 class="text-4xl font-bold">Galeri Sekolah</h1></div>
+            <div class="bg-red-700 py-16 text-white text-center">
+                <h1 class="text-4xl font-bold">Galeri Sekolah</h1>
+                <p class="mt-2 text-red-100">Dokumentasi kegiatan dan suasana belajar mengajar</p>
+            </div>
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="group relative overflow-hidden rounded-lg shadow-lg h-72"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover"></div>
-                        <div class="group relative overflow-hidden rounded-lg shadow-lg h-72"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover"></div>
-                        <div class="group relative overflow-hidden rounded-lg shadow-lg h-72"><img src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <!-- Galeri Item 1 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kegiatan Belajar Mengajar')">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kegiatan Belajar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 2 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Suasana Ruang Kelas')">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Suasana Kelas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 3 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kunjungan Perpustakaan')">
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Perpustakaan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 4 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Olahraga & Futsal')">
+                            <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kegiatan Olahraga</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 5 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Diskusi Guru')">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Rapat Guru</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 6 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kebersamaan Siswa')">
+                            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kebersamaan</p>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Galeri Item 7 -->
+                         <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1517971071642-34a2d3ecc6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Upacara Bendera')">
+                            <img src="https://images.unsplash.com/photo-1517971071642-34a2d3ecc6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Upacara Bendera</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 8 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1534643960519-11ad79bc19df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kegiatan Pramuka')">
+                            <img src="https://images.unsplash.com/photo-1534643960519-11ad79bc19df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kegiatan Pramuka</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 9 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1564596377317-1906969e7be9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Drum Band SDN 0201')">
+                            <img src="https://images.unsplash.com/photo-1564596377317-1906969e7be9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Drum Band SDN 0201</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 10 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Prestasi Siswa')">
+                            <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Prestasi Siswa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 11 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Lab Komputer')">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Lab Komputer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Galeri Item 12 -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Belajar di Taman')">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                                <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Belajar di Taman</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
 
         <div id="page-berita" class="page-content hidden">
-            <div class="bg-red-700 py-16 text-white text-center"><h1 class="text-4xl font-bold">Berita</h1></div>
+            <div class="bg-red-700 py-16 text-white text-center"><h1 class="text-4xl font-bold">Berita & Kegiatan</h1></div>
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                         <div class="bg-white rounded-lg overflow-hidden shadow-md p-6">
-                             <h3 class="text-xl font-bold mb-2">Peringatan Hari Guru</h3><p class="text-gray-600 text-sm">Perayaan meriah dengan pentas seni.</p>
+                         <!-- Berita 1 -->
+                         <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition flex flex-col">
+                             <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-48 object-cover">
+                             <div class="p-6 flex-grow">
+                                 <div class="text-xs text-red-600 font-bold mb-2">25 November 2024</div>
+                                 <h3 class="text-xl font-bold mb-2">Peringatan Hari Guru Nasional</h3>
+                                 <p class="text-gray-600 text-sm mb-4">Perayaan meriah dengan pentas seni siswa dan pemberian penghargaan kepada guru teladan.</p>
+                                 <span class="text-red-600 text-sm font-semibold cursor-pointer hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></span>
+                             </div>
                          </div>
-                         <div class="bg-white rounded-lg overflow-hidden shadow-md p-6">
-                             <h3 class="text-xl font-bold mb-2">Juara Cerdas Cermat</h3><p class="text-gray-600 text-sm">Prestasi membanggakan tingkat kecamatan.</p>
+                         <!-- Berita 2 -->
+                         <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition flex flex-col">
+                             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-48 object-cover">
+                             <div class="p-6 flex-grow">
+                                 <div class="text-xs text-red-600 font-bold mb-2">10 November 2024</div>
+                                 <h3 class="text-xl font-bold mb-2">Juara 1 Lomba Cerdas Cermat</h3>
+                                 <p class="text-gray-600 text-sm mb-4">Siswa SD Negeri 0201 Binanga berhasil meraih juara 1 tingkat Kecamatan Barumun Tengah.</p>
+                                 <span class="text-red-600 text-sm font-semibold cursor-pointer hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></span>
+                             </div>
+                         </div>
+                         <!-- Berita 3 -->
+                         <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition flex flex-col">
+                             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-48 object-cover">
+                             <div class="p-6 flex-grow">
+                                 <div class="text-xs text-red-600 font-bold mb-2">28 Oktober 2024</div>
+                                 <h3 class="text-xl font-bold mb-2">Upacara Hari Sumpah Pemuda</h3>
+                                 <p class="text-gray-600 text-sm mb-4">Pelaksanaan upacara bendera memperingati Hari Sumpah Pemuda dengan khidmat di halaman sekolah.</p>
+                                 <span class="text-red-600 text-sm font-semibold cursor-pointer hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i></span>
+                             </div>
                          </div>
                     </div>
                 </div>
@@ -499,13 +646,99 @@
         </div>
 
         <div id="page-fasilitas" class="page-content hidden">
-            <div class="bg-red-700 py-16 text-white text-center"><h1 class="text-4xl font-bold">Fasilitas</h1></div>
+            <div class="bg-red-700 py-16 text-white text-center"><h1 class="text-4xl font-bold">Fasilitas Sekolah</h1></div>
              <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="border rounded-lg p-4"><h3 class="font-bold">Perpustakaan</h3><p class="text-sm">Lengkap dan nyaman.</p></div>
-                        <div class="border rounded-lg p-4"><h3 class="font-bold">UKS</h3><p class="text-sm">Pelayanan kesehatan siswa.</p></div>
-                        <div class="border rounded-lg p-4"><h3 class="font-bold">Musholla</h3><p class="text-sm">Tempat ibadah bersih.</p></div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Perpustakaan -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-book fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">Perpustakaan</h3>
+                                <p class="text-gray-600 text-sm">Menyediakan ribuan koleksi buku pelajaran dan cerita dengan ruang baca yang nyaman untuk menumbuhkan minat baca siswa.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ruang Kelas -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-chalkboard fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">Ruang Kelas Kondusif</h3>
+                                <p class="text-gray-600 text-sm">Ruang kelas yang bersih, terang, dan berventilasi baik untuk mendukung kenyamanan proses belajar mengajar.</p>
+                            </div>
+                        </div>
+
+                        <!-- Musholla -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-mosque fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">Musholla</h3>
+                                <p class="text-gray-600 text-sm">Sarana ibadah yang bersih dan terawat untuk kegiatan sholat berjamaah dan praktik keagamaan.</p>
+                            </div>
+                        </div>
+
+                        <!-- Lapangan Olahraga -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-futbol fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">Lapangan Serbaguna</h3>
+                                <p class="text-gray-600 text-sm">Lapangan luas untuk kegiatan upacara bendera, senam pagi, dan berbagai aktivitas olahraga siswa.</p>
+                            </div>
+                        </div>
+
+                        <!-- UKS -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-user-md fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">UKS</h3>
+                                <p class="text-gray-600 text-sm">Unit Kesehatan Sekolah dengan peralatan P3K lengkap dan tempat istirahat bagi siswa yang kurang sehat.</p>
+                            </div>
+                        </div>
+
+                        <!-- Kantin Sehat -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                            <div class="relative h-48">
+                                <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <i class="fas fa-utensils fa-lg mb-2"></i>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl mb-2 text-gray-800">Kantin Sehat</h3>
+                                <p class="text-gray-600 text-sm">Menyediakan makanan dan minuman yang higienis, sehat, dan bergizi dengan harga terjangkau.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -519,8 +752,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h4 class="font-bold text-lg mb-4">SD NEGERI 0201 BINANGA</h4>
-                    <p class="text-gray-400 text-sm mb-2">Desa Pasar Binanga Kec. Barumun Tengah Kab. Padang Lawas Prov. Sumatera Utara</p>
-                    <p class="text-gray-400 text-sm">+62 812 3456 7890 | sdn0201binanga@gmail.com</p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 w-6 text-red-500"></i>
+                            <span>Desa Pasar Binanga Kec. Barumun Tengah Kab. Padang Lawas Prov. Sumatera Utara</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone w-6 text-red-500"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope w-6 text-red-500"></i>
+                            <span>sdn0201binanga@gmail.com</span>
+                        </li>
+                    </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-4">Lokasi</h4>
@@ -542,6 +787,17 @@
             <div class="border-t border-gray-800 mt-8 pt-4 text-center text-xs text-gray-500">&copy; 2024 SD Negeri 0201 Binanga.</div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal (Hidden by default) -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black bg-opacity-95 hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeGallery()">
+        <button class="absolute top-4 right-4 text-white text-5xl hover:text-red-500 transition focus:outline-none" onclick="closeGallery()">&times;</button>
+        <div class="relative max-w-4xl w-full text-center" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" class="max-h-[85vh] max-w-full mx-auto rounded-lg shadow-2xl border-4 border-white">
+            <div class="mt-4">
+                <p id="lightbox-caption" class="text-white text-xl font-medium bg-black bg-opacity-60 inline-block px-6 py-2 rounded-full"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Script Logic -->
     <script>
@@ -1086,6 +1342,32 @@
 
             window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
         }
+
+        // --- GALERI INTERAKTIF (LIGHTBOX) ---
+        function openGallery(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            
+            img.src = src;
+            cap.innerText = caption;
+            
+            lightbox.classList.remove('hidden');
+            // Small timeout to allow display:block to apply before opacity transition if we added one, 
+            // but simple toggle is enough for "no code changes" constraint spirit.
+        }
+
+        function closeGallery() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+        }
+        
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeGallery();
+            }
+        });
     </script>
 </body>
 </html>
