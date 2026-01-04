@@ -19,6 +19,7 @@
             font-family: 'Poppins', sans-serif;
         }
         .hero-bg {
+            /* Ganti url(...) dengan 'img/nama_foto.jpg' jika menggunakan foto sendiri */
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80');
             background-size: cover;
             background-position: center;
@@ -106,13 +107,30 @@
         <!-- HALAMAN BERANDA -->
         <div id="page-beranda" class="page-content block">
             <section class="hero-bg h-[90vh] flex items-center justify-center text-center px-4">
-                <div class="max-w-4xl text-white">
-                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block uppercase tracking-wider">Selamat Datang</span>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Membangun Generasi Cerdas & Berakhlak Mulia</h1>
-                    <p class="text-lg md:text-xl mb-8 text-gray-200 drop-shadow-md">SD Negeri 0201 Binanga berkomitmen memberikan pendidikan terbaik untuk putra-putri bangsa dengan fasilitas lengkap dan kurikulum modern.</p>
+                <div class="max-w-5xl text-white">
+                    <span class="bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block uppercase tracking-wider shadow-lg">Selamat Datang di Website Resmi</span>
+                    
+                    <!-- Nama Sekolah Menonjol -->
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg tracking-tight">
+                        SD NEGERI 0201 <span class="text-red-500">BINANGA</span>
+                    </h1>
+                    
+                    <!-- Slogan -->
+                    <h2 class="text-xl md:text-3xl font-semibold mb-8 text-yellow-300 drop-shadow-md italic">
+                        "Membangun Generasi Cerdas & Berakhlak Mulia"
+                    </h2>
+                    
+                    <p class="text-lg md:text-xl mb-10 text-gray-100 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
+                        Kami berkomitmen memberikan layanan pendidikan terbaik dengan fasilitas lengkap dan kurikulum modern untuk masa depan putra-putri bangsa.
+                    </p>
+                    
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button onclick="showPage('profil')" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 shadow-lg cursor-pointer">Tentang Kami</button>
-                        <button onclick="showPage('ppdb')" class="bg-white hover:bg-gray-100 text-red-700 px-8 py-3 rounded-lg font-semibold transition duration-300 shadow-lg cursor-pointer">Info PPDB</button>
+                        <button onclick="showPage('profil')" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition duration-300 shadow-xl cursor-pointer transform hover:scale-105 border-2 border-red-600">
+                            <i class="fas fa-school mr-2"></i> Tentang Kami
+                        </button>
+                        <button onclick="showPage('ppdb')" class="bg-white hover:bg-gray-100 text-red-700 px-8 py-4 rounded-xl font-bold transition duration-300 shadow-xl cursor-pointer transform hover:scale-105 border-2 border-white">
+                            <i class="fas fa-user-plus mr-2"></i> Daftar PPDB
+                        </button>
                     </div>
                 </div>
             </section>
@@ -194,113 +212,190 @@
             <div class="bg-red-700 py-16 text-white text-center">
                 <h1 class="text-4xl font-bold">Profil GTK</h1>
                 <p class="mt-2 text-red-100">Guru dan Tenaga Kependidikan</p>
+                <p class="text-sm text-red-200 mt-2">(Klik pada foto guru untuk melihat detail biodata)</p>
             </div>
             <section class="py-16 bg-gray-50">
                 <div class="container mx-auto px-4">
                      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         <!-- Kepala Sekolah -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition border-t-4 border-red-600">
-                            <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden">
+                        <div onclick="openGTK(0)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition border-t-4 border-red-600 cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 overflow-hidden relative group">
                                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center">
+                                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold border border-white px-3 py-1 rounded">Lihat Detail</span>
+                                </div>
                             </div>
                             <div class="p-4">
                                 <h3 class="font-bold text-lg">SITI MASJULINA HASIBUAN</h3>
                                 <p class="text-red-600 text-sm font-bold">KEPALA SEKOLAH</p>
                             </div>
                         </div>
+                        
                         <!-- Guru Kelas 1 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(1)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">NURASYIAH SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 1 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(2)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">RESMALIANA TURNIP</h3><p class="text-gray-500 text-sm">GURU KELAS 1 B</p></div>
                         </div>
+
                         <!-- Guru Kelas 2 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(3)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ASDIANI</h3><p class="text-gray-500 text-sm">GURU KELAS 2 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(4)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ROSMANIDAR</h3><p class="text-gray-500 text-sm">GURU KELAS 2 B</p></div>
                         </div>
+
                         <!-- Guru Kelas 3 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(5)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">JULIANA SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 3 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(6)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">LANNIARI HARAHAP</h3><p class="text-gray-500 text-sm">GURU KELAS 3 B</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(7)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">IRNA AYUNI HARAHAP</h3><p class="text-gray-500 text-sm">GURU KELAS 3 C</p></div>
                         </div>
+
                         <!-- Guru Kelas 4 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(8)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ONGKU AHMAD MUDA HARAHAP</h3><p class="text-gray-500 text-sm">GURU KELAS 4 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(9)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">VIVI YANTI SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 4 B</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(10)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">NURMINA SARI SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 4 C</p></div>
                         </div>
+
                         <!-- Guru Kelas 5 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(11)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">RINAYANTI</h3><p class="text-gray-500 text-sm">GURU KELAS 5 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(12)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">DESNORA SAHRIATY SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 5 B</p></div>
                         </div>
+
                         <!-- Guru Kelas 6 -->
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(13)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">NOVA RINA SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS 6 A</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(14)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">AHMAD TARMIZI NASUTION</h3><p class="text-gray-500 text-sm">GURU KELAS 6 B</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400"><i class="fas fa-chalkboard-teacher fa-3x"></i></div>
+                        <div onclick="openGTK(15)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-blue-400 relative group">
+                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ZAKIYAH LUBIS</h3><p class="text-gray-500 text-sm">GURU KELAS 6 C</p></div>
                         </div>
+
                         <!-- Guru Kelas Umum & Mapel -->
-                         <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400"><i class="fas fa-user-tie fa-3x"></i></div>
+                         <div onclick="openGTK(16)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400 relative group">
+                                <i class="fas fa-user-tie fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">LATIFAH HANNUM TANJUNG</h3><p class="text-gray-500 text-sm">GURU KELAS</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400"><i class="fas fa-user-tie fa-3x"></i></div>
+                        <div onclick="openGTK(17)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400 relative group">
+                                <i class="fas fa-user-tie fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">SOFIYAH MONTASE SIREGAR</h3><p class="text-gray-500 text-sm">GURU KELAS</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500"><i class="fas fa-quran fa-3x"></i></div>
+                        <div onclick="openGTK(18)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500 relative group">
+                                <i class="fas fa-quran fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ERLINAWATI HARAHAP</h3><p class="text-gray-500 text-sm">GURU AGAMA ISLAM</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500"><i class="fas fa-quran fa-3x"></i></div>
+                        <div onclick="openGTK(19)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500 relative group">
+                                <i class="fas fa-quran fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">NURAINUN SIREGAR</h3><p class="text-gray-500 text-sm">GURU AGAMA ISLAM</p></div>
                         </div>
-                         <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500"><i class="fas fa-quran fa-3x"></i></div>
+                         <div onclick="openGTK(20)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-green-500 relative group">
+                                <i class="fas fa-quran fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">YUNITA EFLIANA HARAHAP</h3><p class="text-gray-500 text-sm">GURU AGAMA ISLAM</p></div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-red-500"><i class="fas fa-futbol fa-3x"></i></div>
+                        <div onclick="openGTK(21)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-red-500 relative group">
+                                <i class="fas fa-futbol fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">ALAN SATRIA HASIBUAN</h3><p class="text-gray-500 text-sm">GURU PENJASORKES</p></div>
                         </div>
-                         <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition">
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-red-500"><i class="fas fa-futbol fa-3x"></i></div>
+                         <div onclick="openGTK(22)" class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-xl transition cursor-pointer transform hover:-translate-y-1 duration-300">
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-red-500 relative group">
+                                <i class="fas fa-futbol fa-3x"></i>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all"></div>
+                            </div>
                             <div class="p-4"><h3 class="font-bold text-lg">SOFYAN EFENDI SIREGAR</h3><p class="text-gray-500 text-sm">GURU PENJASORKES</p></div>
                         </div>
                     </div>
@@ -308,7 +403,7 @@
             </section>
         </div>
 
-        <!-- HALAMAN SISWA (UPDATED WITH HUGE DATA) -->
+        <!-- HALAMAN SISWA -->
         <div id="page-siswa" class="page-content hidden">
             <div class="bg-red-700 py-16 text-white text-center">
                 <h1 class="text-4xl font-bold">Data Siswa</h1>
@@ -406,7 +501,7 @@
             </section>
         </div>
 
-        <!-- HALAMAN AKADEMIK, PPDB, GALERI, BERITA, FASILITAS (Keep Existing) -->
+        <!-- HALAMAN AKADEMIK, PPDB, GALERI, BERITA, FASILITAS -->
          <div id="page-akademik" class="page-content hidden">
             <div class="bg-red-700 py-16 text-white text-center">
                 <h1 class="text-4xl font-bold">Akademik</h1>
@@ -480,68 +575,79 @@
             <section class="py-16 bg-white">
                 <div class="container mx-auto px-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        <!-- Galeri Item 1 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kegiatan Belajar Mengajar')">
+                        <!-- Galeri Item 1: Kegiatan Belajar -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('kbm')">
                             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
                                     <p class="text-white font-bold">Kegiatan Belajar</p>
+                                    <p class="text-red-200 text-xs mt-1">3 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 2 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Suasana Ruang Kelas')">
+                        
+                        <!-- Galeri Item 2: Suasana Kelas -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('kelas')">
                             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
                                     <p class="text-white font-bold">Suasana Kelas</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 3 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kunjungan Perpustakaan')">
+
+                        <!-- Galeri Item 3: Perpustakaan -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('perpus')">
                             <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
-                                    <p class="text-white font-bold">Perpustakaan</p>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kunjungan Perpustakaan</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 4 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Olahraga & Futsal')">
+
+                        <!-- Galeri Item 4: Olahraga -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('olahraga')">
                             <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
-                                    <p class="text-white font-bold">Kegiatan Olahraga</p>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Olahraga & Futsal</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 5 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Diskusi Guru')">
+
+                        <!-- Galeri Item 5: Diskusi Guru -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('guru')">
                             <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                                     <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
-                                    <p class="text-white font-bold">Rapat Guru</p>
+                                    <p class="text-white font-bold">Diskusi Guru</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 6 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kebersamaan Siswa')">
+
+                        <!-- Galeri Item 6: Kebersamaan -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('kebersamaan')">
                             <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
-                                    <p class="text-white font-bold">Kebersamaan</p>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
+                                    <p class="text-white font-bold">Kebersamaan Siswa</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                         <!-- Galeri Item 7 -->
-                         <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1517971071642-34a2d3ecc6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Upacara Bendera')">
+
+                         <!-- Galeri Item 7: Upacara -->
+                         <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('upacara')">
                             <img src="https://images.unsplash.com/photo-1517971071642-34a2d3ecc6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -550,38 +656,45 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 8 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1534643960519-11ad79bc19df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Kegiatan Pramuka')">
+
+                        <!-- Galeri Item 8: Pramuka -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('pramuka')">
                             <img src="https://images.unsplash.com/photo-1534643960519-11ad79bc19df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
                                     <p class="text-white font-bold">Kegiatan Pramuka</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 9 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1564596377317-1906969e7be9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Drum Band SDN 0201')">
+
+                        <!-- Galeri Item 9: Drum Band -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('drumband')">
                             <img src="https://images.unsplash.com/photo-1564596377317-1906969e7be9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
                                     <p class="text-white font-bold">Drum Band SDN 0201</p>
+                                    <p class="text-red-200 text-xs mt-1">3 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 10 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Prestasi Siswa')">
+
+                        <!-- Galeri Item 10: Prestasi -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('prestasi')">
                             <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                    <i class="fas fa-search-plus text-white text-3xl mb-2"></i>
+                                    <i class="fas fa-images text-white text-3xl mb-2"></i>
                                     <p class="text-white font-bold">Prestasi Siswa</p>
+                                    <p class="text-red-200 text-xs mt-1">2 Foto</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 11 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Lab Komputer')">
+
+                        <!-- Galeri Item 11: Lab -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('lab')">
                             <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -590,8 +703,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Galeri Item 12 -->
-                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80', 'Belajar di Taman')">
+
+                        <!-- Galeri Item 12: Taman -->
+                        <div class="group relative overflow-hidden rounded-xl shadow-lg h-72 cursor-pointer" onclick="openGallery('taman')">
                             <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                                 <div class="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -622,7 +736,7 @@
                          </div>
                          <!-- Berita 2 -->
                          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition flex flex-col">
-                             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-48 object-cover">
+                             <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                              <div class="p-6 flex-grow">
                                  <div class="text-xs text-red-600 font-bold mb-2">10 November 2024</div>
                                  <h3 class="text-xl font-bold mb-2">Juara 1 Lomba Cerdas Cermat</h3>
@@ -632,7 +746,7 @@
                          </div>
                          <!-- Berita 3 -->
                          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition flex flex-col">
-                             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-48 object-cover">
+                             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                              <div class="p-6 flex-grow">
                                  <div class="text-xs text-red-600 font-bold mb-2">28 Oktober 2024</div>
                                  <h3 class="text-xl font-bold mb-2">Upacara Hari Sumpah Pemuda</h3>
@@ -788,13 +902,80 @@
         </div>
     </footer>
 
-    <!-- Lightbox Modal (Hidden by default) -->
-    <div id="lightbox" class="fixed inset-0 z-[60] bg-black bg-opacity-95 hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeGallery()">
-        <button class="absolute top-4 right-4 text-white text-5xl hover:text-red-500 transition focus:outline-none" onclick="closeGallery()">&times;</button>
+    <!-- GTK Detail Modal -->
+    <div id="gtk-modal" class="fixed inset-0 z-[70] bg-black bg-opacity-70 hidden flex items-center justify-center p-4 transition-opacity duration-300" onclick="closeGTK()">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden transform transition-all scale-100" onclick="event.stopPropagation()">
+            <!-- Header with Photo Background (Simulated) -->
+            <div class="bg-red-700 p-6 text-white relative">
+                <button class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition focus:outline-none" onclick="closeGTK()">&times;</button>
+                <div class="flex items-center space-x-4">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-md text-gray-400">
+                        <i id="gtk-icon" class="fas fa-user fa-3x hidden"></i>
+                        <img id="gtk-img" src="" class="w-full h-full object-cover hidden">
+                    </div>
+                    <div>
+                        <h3 id="gtk-nama" class="text-xl font-bold leading-tight">Nama Guru</h3>
+                        <p id="gtk-jabatan" class="text-red-200 text-sm font-medium">Jabatan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Body Content -->
+            <div class="p-6">
+                <div class="space-y-4">
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <div class="w-1/3 text-gray-500 text-sm font-semibold">NIP</div>
+                        <div id="gtk-nip" class="w-2/3 text-gray-800 text-sm font-mono">-</div>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <div class="w-1/3 text-gray-500 text-sm font-semibold">Tempat, Tgl Lahir</div>
+                        <div id="gtk-ttl" class="w-2/3 text-gray-800 text-sm">-</div>
+                    </div>
+                    <div class="flex border-b border-gray-100 pb-2">
+                        <div class="w-1/3 text-gray-500 text-sm font-semibold">Pendidikan</div>
+                        <div id="gtk-pendidikan" class="w-2/3 text-gray-800 text-sm">-</div>
+                    </div>
+                     <div class="flex border-b border-gray-100 pb-2">
+                        <div class="w-1/3 text-gray-500 text-sm font-semibold">Sertifikasi</div>
+                        <div class="w-2/3">
+                            <span id="gtk-sertifikasi" class="inline-block px-2 py-1 text-xs font-bold rounded-full bg-gray-100 text-gray-600">
+                                -
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <button onclick="closeGTK()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-6 rounded-lg transition duration-200">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal (Updated for Navigation) -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black bg-opacity-95 hidden flex items-center justify-center p-4 transition-opacity duration-300">
+        <!-- Close Button -->
+        <button class="absolute top-4 right-4 text-white text-5xl hover:text-red-500 transition focus:outline-none z-50" onclick="closeGallery()">&times;</button>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-btn" class="absolute left-4 text-white text-4xl hover:text-red-500 transition focus:outline-none z-50 hidden md:block" onclick="changeImage(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="next-btn" class="absolute right-4 text-white text-4xl hover:text-red-500 transition focus:outline-none z-50 hidden md:block" onclick="changeImage(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
         <div class="relative max-w-4xl w-full text-center" onclick="event.stopPropagation()">
-            <img id="lightbox-img" src="" class="max-h-[85vh] max-w-full mx-auto rounded-lg shadow-2xl border-4 border-white">
-            <div class="mt-4">
+            <img id="lightbox-img" src="" class="max-h-[80vh] max-w-full mx-auto rounded-lg shadow-2xl border-4 border-white object-contain">
+            <div class="mt-4 flex flex-col items-center">
                 <p id="lightbox-caption" class="text-white text-xl font-medium bg-black bg-opacity-60 inline-block px-6 py-2 rounded-full"></p>
+                <!-- Counter -->
+                <p id="lightbox-counter" class="text-gray-400 text-sm mt-2 font-mono bg-gray-900 px-3 py-1 rounded-full hidden">1 / 1</p>
+                
+                <!-- Mobile Navigation (visible only on small screens) -->
+                <div class="flex gap-8 mt-4 md:hidden">
+                    <button class="text-white text-3xl hover:text-red-500" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="text-white text-3xl hover:text-red-500" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -804,426 +985,426 @@
         // === DATA SISWA LENGKAP ===
         // Format: [Nama, JK, Tgl Lahir, Nama Ibu, NISN, Kelas]
         const rawDataSiswa = [
-["ADEIRAH AZZAHRA HARAHAP","P","08/10/2018","SITI ROPIDA SIREGAR","3186051665","KELAS 1 A"],
-["AISYAH RIZKI HASIBUAN","L","20/04/2019","NURMA WATI","3197603420","KELAS 1 A"],
-["ANKA WIJAYA HASIBUAN","L","09/07/2019","NELLI ANGRIANA LUBIS","3192929500","KELAS 1 A"],
-["ANNAYLA RIZKIYAH HARAHAP","P","06/06/2019","MARTIKA SARI JAMBAK","3197104870","KELAS 1 A"],
-["AQILA ZAHRA POHAN","P","19/12/2018","ANNISA FITRI HARAHAP","3187992141","KELAS 1 A"],
-["ARIQ ZEIN AHMAD HARAHAP","P","16/05/2019","VIVI YANTI SIREGAR","3192697326","KELAS 1 A"],
-["BENA APRIANI AMELIYAH HSB","P","14/04/2019","NUR HAYATI SIREGAR","3192803193","KELAS 1 A"],
-["CAHYA MEDINA DAULAY","P","27/05/2019","IRMA KARTIKA HARAHAP","3199067396","KELAS 1 A"],
-["FAHIRA AZ-ZAHRA","P","25/03/2019","KHOLIZA NASUTION","3199380623","KELAS 1 A"],
-["FATIMAH SARI AZZAHRA SIREGAR","P","27/12/2018","MARNI ARIANI NASUTION","3180963634","KELAS 1 A"],
-["ILHAM ROSADY HARAHAP","L","29/05/2019","MASRIANI SIREGAR","3197135677","KELAS 1 A"],
-["JIHAN SYARIF HARAHAP","P","27/05/2019","AULIDA AZMI BORU MUNTHE","3191011815","KELAS 1 A"],
-["KURNIAWAN TANJUNG","L","18/04/2019","AINUN SAIMA SIREGAR","3199071551","KELAS 1 A"],
-["MASLAN HASIBUAN","P","09/12/2018","ARRIDA HELPI HARAHAP","3189384381","KELAS 1 A"],
-["MAULANA HAKIM HARAHAP","L","03/09/2018","RINAYANTI","3183386964","KELAS 1 A"],
-["MUHAMMAD FAIZ HARAHAP","L","17/03/2019","ROMAITO","3198028802","KELAS 1 A"],
-["MUHAMMAD NABIL AL GIFARI HARAHAP","L","28/07/2019","WIRDA FUZI LESTARI NASUTION","3198769422","KELAS 1 A"],
-["NADIYA PUTRI DAULAY","P","30/10/2018","SAIDA MAYANTI HARAHAP","3180382692","KELAS 1 A"],
-["NURSAMIMA SIREGAR","P","23/10/2018","ROBIATUL ADAWIAH","3181174590","KELAS 1 A"],
-["QAIREEN SHANUM NAMORA HASIBUAN","P","21/10/2018","DERMAWANTI SIREGAR","3181047898","KELAS 1 A"],
-["RAICENRA DINATA NAPITU","L","26/03/2019","MASLIANA PURBA","3191312121","KELAS 1 A"],
-["REFA PRADITA ARYOS","P","22/06/2018","YOSINOFA LUSIANA","3183543248","KELAS 1 A"],
-["REFAN PRANATA ARYOS","L","22/06/2018","YOSINOFA LUSIANA","3181890738","KELAS 1 A"],
-["SELINA ZAHIRA IMANTA TANJUNG","P","16/11/2018","AMINAH FAJRI HARAHAP","","KELAS 1 A"],
-["SINTIA FANNY","P","06/08/2018","IRNANIRWANA SIREGAR","3180574538","KELAS 1 A"],
-["SULTAN PARLINDUNGAN HASIBUAN","L","09/12/2018","SRI REZKY FAUJIATI HARAHAP","3186505287","KELAS 1 A"],
-["SUMAYYAH ASY-SYAHIDAH HARAHAP","P","01/06/2019","EVA MAHRANI","3199668540","KELAS 1 A"],
-["ZEFANYA EVELYN SIHALOHO","P","08/05/2019","LIDIYA DEVEGA SIRAIT SH","3195769823","KELAS 1 A"],
-["ADIBA SYILAH","P","27/02/2019","INDAH PRASTIWI","3193301045","KELAS 1 B"],
-["ADILA KHALISA","P","13/03/2019","NURAYGA","3193735853","KELAS 1 B"],
-["AFIF ALZAYDAN","L","22/08/2019","MINTAITO","3196116300","KELAS 1 B"],
-["AFLAHUL FAIZ HASIBUAN","L","29/08/2018","MARLINA HENI RITONGA, AM.KEB","3187360646","KELAS 1 B"],
-["AHMAD AZIZ SANUSI NASUTION","L","07/08/2019","ADE IRMA SURYANI NASUTION","3196008697","KELAS 1 B"],
-["AHSAN MARUDIN HARAHAP","L","24/04/2019","NURKHOLIJA SIREGAR","3195596766","KELAS 1 B"],
-["AIRA NADHIFAH SIREGAR","P","17/02/2019","ENNI ROMANDA SARI HARAHAP","3190237050","KELAS 1 B"],
-["AKMAL SAFIIY","L","17/09/2019","ROSMAIDA PULUNGAN","3192803867","KELAS 1 B"],
-["ANDRA HARAHAP","L","27/11/2018","HETTI YULIANI HARAHAP","3188493310","KELAS 1 B"],
-["ANDRI ANI HARAHAP","P","27/11/2018","HETTI YULIANI HARAHAP","3179869899","KELAS 1 B"],
-["ANIN DITA KEISA HARAHAP","P","04/01/2019","ADE EMMIAYANA","3191320879","KELAS 1 B"],
-["ANINDIA RISKI HARAHAP","P","04/01/2019","ADE EMMIAYANA","3197285023","KELAS 1 B"],
-["ANINDYA MIKHAILA SIREGAR","P","23/11/2018","DIAN MAHRANI HARAHAP","3183647237","KELAS 1 B"],
-["ANZANI ANINDYA PUTRI","P","28/06/2019","JELITA","3193799322","KELAS 1 B"],
-["ARFA ZERINA FAUZIYAH HARAHAP","P","06/03/2019","LISNA WATI HRP","3199245002","KELAS 1 B"],
-["AZRIEL AGUSLAN LUBIS","L","03/08/2019","YENNI ROSTIA SARI HASIBUAN","3191773511","KELAS 1 B"],
-["AZRIL MAHODUM HASIBUAN","L","19/10/2018","HAMNA HARAHAP","3183905378","KELAS 1 B"],
-["DILAN ALFA RIZKI HARAHAP","L","01/04/2019","NURHOLIDA DALIMUNTE","3195542317","KELAS 1 B"],
-["DZAKIR ANUGRAH RAMADHAN HRP","L","28/05/2019","DESNORA SAHRIATY SIREGAR","3199719630","KELAS 1 B"],
-["HANNAH QANITA HARAHAP","P","28/03/2019","ROMAYANTI NAIBAHO","3199166402","KELAS 1 B"],
-["KHALISA KHAIRANI NASUTION","P","15/07/2019","RISNA SARI HUTASUHUT","","KELAS 1 B"],
-["MHD.UMAIR ALFATIH HRP","L","25/09/2018","HOTRINASARI NASUTION","3188995248","KELAS 1 B"],
-["MUAMMAR KHADAFI NASUTION","L","12/04/2019","ERLINA WATI HARAHAP","3191598227","KELAS 1 B"],
-["NADIRA AZ ZAHRA NASUTION","P","05/11/2018","LISNAWATI LUBIS","3188973862","KELAS 1 B"],
-["QIANA MARITO HASIBUAN","P","14/10/2018","DERMIATI SIMANJUNTAK","3188025000","KELAS 1 B"],
-["SAHDIA POHAN","P","20/11/2018","LILI IDAWATI DLT","3186255404","KELAS 1 B"],
-["SUCI RAMADHANIHARAHAP","P","17/05/2019","ARNIDA SARI DAULAY","3196063107","KELAS 1 B"],
-["ZAURA KASIH DILARA DAULAY","P","04/05/2019","ROSINTA MARITO SIREGAR","3194995140","KELAS 1 B"],
-["ADILA ALMA MARINA BATUBARA","P","04/05/2018","ELIANTI HASIBUAN","3184886425","KELAS 2 A"],
-["AHMAD SAIDI","L","31/08/2018","SITI RANI NASUTION","3187215990","KELAS 2 A"],
-["AIDIL FAZAR SIREGAR","L","23/06/2018","IRA MAYASOPA","3180561090","KELAS 2 A"],
-["AISYAH SILMI AFIQA TANJUNG","P","16/05/2017","FAUZIAH SIAGIAN","3173655524","KELAS 2 A"],
-["ALBAR SANI HASIBUAN","L","01/10/2017","HAFJO NASUTION","3174154025","KELAS 2 A"],
-["ALMA NAURA ANASTASYA HARAHAP","P","25/02/2018","SAMRIA LELI MARIANA","3183580835","KELAS 2 A"],
-["AQILLA FARIZA MUFIA HARAHAP","P","30/01/2018","JERNI FARIDA SIREGAR","3188001959","KELAS 2 A"],
-["ARRAFI FARZAN GINTING","L","20/08/2018","SAHNAZ PRATIWI SINAMBELA","3184387536","KELAS 2 A"],
-["ATHA ARSHAVIN","L","05/05/2018","CICI DERITA SIREGAR","","KELAS 2 A"],
-["ATIFA SYAFITRI SIREGAR","P","23/06/2018","IDA ROYANI HARAHAP","3183581137","KELAS 2 A"],
-["FEYZA WALMADINA HASIBUAN","P","03/11/2017","FITRI SURYANI HARAHAP","3179067086","KELAS 2 A"],
-["KHALISA ALMIRA DAULAY","P","01/01/2018","NOVA RINA SIREGAR","3185535820","KELAS 2 A"],
-["MUHAMMAD ADRIAN TOHIR HRP","L","30/07/2018","NOVITA NUR SIREGAR","3183053233","KELAS 2 A"],
-["MUHAMMAD HUSEIN HARAHAP","L","04/04/2018","MAHDALENA HARAHAP","3187986125","KELAS 2 A"],
-["MUHAMMAD IBNU ABDILLAH SIREGAR","L","27/05/2018","NOPIDA MASTIA HARAHAP","3180703006","KELAS 2 A"],
-["MUKHLIS ALFARIZI HASIBUAN","L","21/09/2017","RESTU FRATIWI NASUTION","3173190723","KELAS 2 A"],
-["NADIRA PUTRI AQILA HARAHAP","P","21/09/2017","RIA ANJELINA SIMAMORA","3175013354","KELAS 2 A"],
-["NAUFAL SYAHIR SIREGAR","L","27/10/2017","SOUPI ANDRIANI HARAHAP","3177307947","KELAS 2 A"],
-["NAYYARA IHZA SIREGAR","P","16/07/2018","ARMA AISYAH","3184731158","KELAS 2 A"],
-["NISMI KHAFIZAH NASUTION","P","11/12/2017","MARLY YENI SUSANTI TANJUNG","3173300805","KELAS 2 A"],
-["RIZKY FATIHAN SIREGAR","L","29/09/2017","JUNITA ROMADANI SIR","3170375519","KELAS 2 A"],
-["SALWA AMINAH SIREGAR","P","10/12/2017","NENNI TERIANA HARAHAP","3174191291","KELAS 2 A"],
-["SUCI ANNAMIRA SIREGAR","P","05/01/2018","MILDA WIRIANA PANE","3188142731","KELAS 2 A"],
-["SUKRI FAUZAN","L","13/03/2017","MARDIA HARAHAP","3178362451","KELAS 2 A"],
-["SY'INDI NIA RAHMADANI","P","23/05/2018","SUNARTI","3188415885","KELAS 2 A"],
-["WAHYU AL HASBY HASIBUAN","L","25/07/2018","LATIFAH HANUM HASIBUAN","3186090694","KELAS 2 A"],
-["WIDIA DARMA AISYAH","P","13/05/2018","ASNAINI","3188911460","KELAS 2 A"],
-["WIDIA DARMA AISYAH","P","13/05/2018","ASNAINI","3188911460","KELAS 2 A"],
-["ZANNUBA AISYAH HASNI HARAHAP","P","05/12/2017","NURSAIDAH DAULAY S.FARM","3171474662","KELAS 2 A"],
-["ZIHAN NURUL AINI SIREGAR","P","28/11/2017","SITI SANG SURYA HARAHAP","3175759002","KELAS 2 A"],
-["ZITA ADIFA HARAHAP","P","03/10/2017","DUDUNG SURYA HANDAYANI SIREGAR","3177761807","KELAS 2 A"],
-["ABDUL RA'UF AL SYAUQI CANIAGO","L","21/05/2018","TETTY KHAIRANI SIREGAR","","KELAS 2 B"],
-["ABIL HASAN AL KARIM TANGGUH","L","06/12/2017","ELFIYANTI","3171146018","KELAS 2 B"],
-["ADZRA ALBY MAHMUD SIREGAR","L","19/09/2017","TILUMAYAN HARAHAP","3170587476","KELAS 2 B"],
-["AHMAD FAUZI SIREGAR","L","28/02/2018","SRI MALAYATI HASIBUAN","3189080493","KELAS 2 B"],
-["AIDIL FITRAH SIREGAR","L","19/06/2018","ERLINAWATI HUTASUHUT","3182865995","KELAS 2 B"],
-["ANDHIKA GUNAWAN HARAHAP","L","12/05/2018","NURMAHARI SIREGAR","3188580935","KELAS 2 B"],
-["AQILA KHADIZAH HRP","P","24/10/2017","INTAN REZENI HSB","3179144064","KELAS 2 B"],
-["ASROYANI HARAHAP","P","04/10/2017","MIRNA HAIRANI SIREGAR","3174971840","KELAS 2 B"],
-["AULIA HASIBUAN","P","19/05/2018","NURAINA BATUBARA","3188122693","KELAS 2 B"],
-["AZKA ANUGRAH REHAN HASIBUAN","L","09/09/2017","ROSNA SIREGAR","3170627530","KELAS 2 B"],
-["FAQIH AL-ARSYA HARAHAP","L","28/08/2018","JUNIDAR SIREGAR","3181618624","KELAS 2 B"],
-["GIBRAN ELFIKY SIREGAR","L","22/09/2017","PITRI WULANDARI, AM.KEB","3177697660","KELAS 2 B"],
-["HASAN ABDUL ROSYID HARAHAP","L","12/11/2017","MEWAH SANTI HASIBUAN","3172794135","KELAS 2 B"],
-["IBRA ELFIKY SIREGAR","L","22/09/2017","PITRI WULANDARI, AM.KEB","3177368130","KELAS 2 B"],
-["KEILA RIZKI ROMAITO HASIBUAN","P","07/12/2017","DEVI HERIANI SIREGAR","3173156136","KELAS 2 B"],
-["KEYSHA NAIFATUL RIZKI HSB","P","02/10/2017","ANITA JULIANTHI","3172426755","KELAS 2 B"],
-["MAFAZA SUCI RAMADHANI","P","24/05/2018","HANI PURWANTI","3181069290","KELAS 2 B"],
-["MHD SAMER SANDY HARAHAP","L","24/04/2018","ROSLANIA HSB","3181866020","KELAS 2 B"],
-["MUHAMMAD RIVAI SIREGAR","L","24/03/2018","NUR HAYATI","3184448454","KELAS 2 B"],
-["NAZIFA NAHLA SIREGAR","P","18/11/2017","HENNI MAHYUNI HARAHAP","3171875108","KELAS 2 B"],
-["NAZWA RAMADANI DAULAY","P","22/06/2017","ELVI RODIA HRP","3172083676","KELAS 2 B"],
-["NUHA MUFIDAH SALIM SIMAMORA","P","21/03/2018","NURHANIFAH HARAHAP","3188546674","KELAS 2 B"],
-["PUTRA KARUNIA LASE","L","16/12/2017","INGATI ZENDATO","3176293379","KELAS 2 B"],
-["RAFKA AL GHANI HABIBI NASUTION","L","25/02/2018","HENNI TRISNAWATI HARAHAP","3182489216","KELAS 2 B"],
-["RAJA GITCAD SIREGAR","L","21/12/2018","SITI KHOIRIYAH HARAHAP","3189801584","KELAS 2 B"],
-["RISKON ILHAM ROKKAYA S","L","25/05/2018","ISRONIATI HARAHAP","3181429799","KELAS 2 B"],
-["ZIHAN MUNAJAH SIREGAR","P","02/10/2017","NUR AISYAH TANJUNG","3170170102","KELAS 2 B"],
-["ZIKO ALMAHIJA","L","26/05/2017","SITI NUR HOTIMAH","3177158451","KELAS 2 B"],
-["ABDUL ZAIDAN SIREGAR","L","31/08/2016","HERNI SARPINA LUBIS","3160663083","KELAS 3 A"],
-["ADEEVA NATASYA HASIBUAN","P","03/05/2017","EMILA YUSTINA","3178369623","KELAS 3 A"],
-["AHMAD IRMAN HABIBI","L","05/05/2017","NAM ELY NENSI PULUNGAN","3174072765","KELAS 3 A"],
-["AIDIL KHAMAL SATIA","L","01/07/2017","EKA RIZIANI HARAHAP","3171722601","KELAS 3 A"],
-["AIRA MYSHA INARA HARAHAP","P","31/10/2017","ARBAIYAH POHAN","3178120377","KELAS 3 A"],
-["AISY DAHLER DAULAY","L","20/03/2017","YUSRA NASUTION","3175685944","KELAS 3 A"],
-["APRILIA RAHMA YANI HARAHAP","P","02/04/2017","JULIANTI BR NASUTION","3176250482","KELAS 3 A"],
-["ARMADANSYAH HARAHAP","L","21/06/2017","HOTJULIANI SIREGAR","3170259307","KELAS 3 A"],
-["ATTHAR DIR NUH HASIAN NST","L","27/11/2016","SITI KHOLIJAH SIREGAR","3167602987","KELAS 3 A"],
-["AULIA AZKADINA HARAHAP","P","28/08/2016","VIVI YANTI SIREGAR","3166605378","KELAS 3 A"],
-["AZKHY RAMDI PRATAMA","L","13/04/2017","ADE IRMA SURYANI HRP","3179198857","KELAS 3 A"],
-["AZZAM KHALIF PUTRA HARAHAP","L","13/12/2016","MARLIYANI SIREGAR","3163312831","KELAS 3 A"],
-["BENI ARDIANSYAH HASIBUAN","L","15/11/2016","ERMINA TIARO DEWI","3164137121","KELAS 3 A"],
-["CANTIKA AURELIA JASMIN NASUTION","P","14/08/2017","SARIPA HANUM HARAHAP","3177715854","KELAS 3 A"],
-["DARNI ADHA PULUNGAN","P","09/09/2016","DESI RATNA DEWI","3163639372","KELAS 3 A"],
-["DINAR RAMADHAN HARAHAP","L","08/06/2017","ELMINA SARI DAULAY","3176194663","KELAS 3 A"],
-["ERICK AHSAN HSB","L","26/12/2015","ERMINAWATI DAULAY","3150902658","KELAS 3 A"],
-["ERWIN SYAH HARAHAP","L","26/01/2017","TETTI MAULINA SIREGAR","3176712185","KELAS 3 A"],
-["HANA HUMAIRA HARAHAP","P","21/01/2017","SARTINA WAHDINI SIREGAR","3176138005","KELAS 3 A"],
-["MEISYAH RAHMADANI HARAHAP","P","30/05/2017","SITI SUARNI NASUTION","3173584348","KELAS 3 A"],
-["NAILAH HABIBAH PUTRI","P","10/06/2016","NOVI SYAIFUL","3165189343","KELAS 3 A"],
-["NAYRA ANINDIYA HASIBUAN","P","21/01/2017","SITI RODIAH","173487620","KELAS 3 A"],
-["NUR HAFIZAH HASIBUAN","P","06/08/2017","SITI RAHMA SIREGAR","3174202764","KELAS 3 A"],
-["NUR TAZKIAH HARAHAP","P","28/10/2016","EFRINA RAYA","3168370453","KELAS 3 A"],
-["PRABU ANANDA AKNI SIREGAR","L","10/10/2017","NETY HERAWATI","3174117590","KELAS 3 A"],
-["PUTRI","P","10/05/2017","NOPI HARAHAP","3176176330","KELAS 3 A"],
-["RAHMAD TRI SYAPUTRA SIREGAR","L","13/02/2017","RISKI MARLIA PASARIBUA","3177945238","KELAS 3 A"],
-["SHENA ARTIKA CORI HARAHA","P","31/07/2017","SITI SARIAH HASIBUAN","3173424074","KELAS 3 A"],
-["ZIA ALMAIRA SIREGAR","P","20/01/2017","LENI MARLINA","179719220","KELAS 3 A"],
-["ABDUL SALIM","L","26/08/2016","LILI YANTI","","KELAS 3 B"],
-["ADI WIJAYA SAPUTRA SIREGAR","L","09/09/2016","SITI AMINAH HASIBUAN","3161354080","KELAS 3 B"],
-["ADNAN AL-FAIZ","L","26/03/2017","ELFINAHARI HASIBUAN","3177944644","KELAS 3 B"],
-["AFIFAH RAHAYU SIREGAR","P","17/08/2017","INSAN SAKURA HSB","3179021673","KELAS 3 B"],
-["AFIZAH RIZKYA PULUNGAN","P","21/03/2017","NIRMALA","3173165184","KELAS 3 B"],
-["ARBY HARUN NURPRATAMA HARAHAP","L","20/10/2017","NURBINA SARI SIREGAR","3177639629","KELAS 3 B"],
-["ASSYFA PUTRI MEDINA HASIBUAN","P","27/09/2018","FATIMA SARI SIREGAR","3185844730","KELAS 3 B"],
-["AULIA ZAHRA HARAHAP","P","29/08/2016","KASMA SURIANI SIREGAR","3163737633","KELAS 3 B"],
-["DIAN YUANITA SIREGAR","P","23/07/2017","MAHYUNI HARAHAP","3172445562","KELAS 3 B"],
-["FATHIR ZAYN AHMAD SIREGAR","L","04/11/2016","FARHAN MEUTHIA","3164928234","KELAS 3 B"],
-["FAUZAN RAMADHAN","L","31/05/2017","SITI NURBAYA","3178374318","KELAS 3 B"],
-["FITRI ARSYILA HARAHAP","P","03/07/2017","AGITA MARIANTI SIMAMORA","3177253413","KELAS 3 B"],
-["HAFIZA SYAKIR SIREGAR","P","21/03/2017","ANNY KHOLILA HASIBUAN","3176581312","KELAS 3 B"],
-["JIHAN SARTIKA SIMAMORA","P","23/08/2017","JUWITA ANGGIAN SINAGA","3179051253","KELAS 3 B"],
-["KEYSA ALMEERA","P","14/07/2017","SRI SADLY","3177075411","KELAS 3 B"],
-["KHOIRUM ZIKRI SIREGAR","L","09/10/2016","IRA MAYASOPA","3166506446","KELAS 3 B"],
-["LESTI AYU SIREGAR","P","06/03/2016","ROSMAIDA PULUNGAN","3166943992","KELAS 3 B"],
-["M. RAFIF AL-FARIZI SIREGAR","L","12/05/2017","NUR SAKINAH","3172254366","KELAS 3 B"],
-["MAHMUD ADIB PRATAMA","L","24/01/2017","JULIANA FITRI SIREGAR","3174557181","KELAS 3 B"],
-["NAURA SAKILAH HASIBUAN","P","25/06/2017","NURHAYATI SIREGAR","3179535313","KELAS 3 B"],
-["NAYLA RIZKI AZZAHRA","P","21/08/2017","WINNI CAHYANA SIREGAR","3178628166","KELAS 3 B"],
-["PUTRI ASSYIFA","P","27/08/2017","NOPRIANI SIREGAR","3179643031","KELAS 3 B"],
-["RASID HERIANSYAH TAMBUNAN","L","28/06/2017","ITO ENJELINA HARAHAP","3173988879","KELAS 3 B"],
-["RAYHANI FADILLAH NASUTION","P","06/09/2016","NUR HIDAYAH","3160994328","KELAS 3 B"],
-["RAZKA ILUMINADO SIREGAR","L","22/09/2016","SITI HUSNIAH MANURUNG","3168898857","KELAS 3 B"],
-["REY ALFARIZI TANJUNG","L","12/08/2017","UBA ANNASARI HARAHAP","3171775886","KELAS 3 B"],
-["SUTAN MAHYIN","L","16/09/2016","UMMI KALSUM HARAHAP","3166356461","KELAS 3 B"],
-["SYAKILA ERGHA SYAFANA","P","10/10/2016","ERMIYATI LESTARI","3164820526","KELAS 3 B"],
-["ABDI PANE","L","01/02/2016","JERLIMA","3163841344","KELAS 3 C"],
-["AGUSTINAMORA HARAHAP","P","22/08/2017","RIZKA MUNAWWARAH","3173273941","KELAS 3 C"],
-["AQILA NAJAMATUL HAYAH HRP","P","21/10/2016","NURLINA SIREGAR","3164050651","KELAS 3 C"],
-["ARSA BILAH SIREGAR","P","25/08/2017","AGUSTINA HARONIA NASUTION","3172826655","KELAS 3 C"],
-["ASYIFA NURUL SIREGAR","P","31/08/2017","RASMIATI HARAHAP SAG","3179567637","KELAS 3 C"],
-["AZMYA NASIRA HARAHAP","P","17/02/2017","NURHIDAYAH TANJUNG","3177171137","KELAS 3 C"],
-["BAIM ADITIYA BAKTI PRAJA","L","15/05/2017","HARPINA HARAHAP","3170246666","KELAS 3 C"],
-["BALQIS ALMAIRA DAULAY","P","29/09/2016","IRNA AYUNI HARAHAP","3160925023","KELAS 3 C"],
-["EL - HAZIMA UFAIRA HASIBUAN","P","28/12/2017","NURHAMILAH HSB","3178929080","KELAS 3 C"],
-["FADIL IRWANSA","L","20/02/2017","JULI YANTI HARAHAP","3174343219","KELAS 3 C"],
-["IKHSAN FAZRI AKHIR SIREGAR","L","13/08/2017","APNI RAYANI","3176943266","KELAS 3 C"],
-["IRFAN YUSRAN HSB","L","15/11/2016","RATNA DEWI PASARIBU","3169044926","KELAS 3 C"],
-["ISA AGUSTINA HASIBUAN","P","13/08/2016","ROSIDA HARHAP","3164975416","KELAS 3 C"],
-["JOSUA TORESNALES","L","24/01/2017","RESMALIANA TURNIP","3174090254","KELAS 3 C"],
-["JUANDA AMIN HARAHAP","L","13/09/2016","RINAYANTI","3169960681","KELAS 3 C"],
-["KASIH PITALIA NAPITU","P","10/08/2017","MASLIANA PURBA","3179474393","KELAS 3 C"],
-["MHD. ZUL AZIZ DAULAY","L","04/07/2017","SYARI ASNI HASIBUAN","3172291990","KELAS 3 C"],
-["MUHAMMAD AMIRUL NIZAM SIREGAR","L","19/06/2017","RINA SALPITA LUBIS","3174365424","KELAS 3 C"],
-["MUHAMMAD HAPIS HARAHAP","L","21/03/2017","MARLINA","3178270065","KELAS 3 C"],
-["MUHAMMAD ROIF ANAQIE HARAHAP","L","27/06/2017","WIRDA FUJI LESTARI NASUTION","3179286145","KELAS 3 C"],
-["NAUMI HATI HARAHAP","P","12/04/2017","EFRINA SUSANTI PULUNGAN","3177932204","KELAS 3 C"],
-["NAYLA ANINDITA HASIBUAN","P","21/01/2017","SITI RODIAH","173487620","KELAS 3 C"],
-["NAZLA KHAIRANI NASUTION","P","27/09/2016","DESI MORINA SIREGAR","3169354947","KELAS 3 C"],
-["RISKIA AMORITA HARUMI HARAHAP","P","19/05/2017","MEGA WARNI POHAN","3177822598","KELAS 3 C"],
-["SAKKOT HAMONANGAN HARAHAP","L","01/11/2016","LISNA WATI HRP","3162232717","KELAS 3 C"],
-["SYAMSUL ARIFIN HARAHAP","L","03/04/2017","REVITAMALA HASIBUAN","3177224379","KELAS 3 C"],
-["YUSNIDAR DEWINKA YANTI DAULAY","P","16/02/2017","JUNI RAHMIATI SIREGAR","3178794233","KELAS 3 C"],
-["ZIKRAN AYYASY UMRAN DAULAY","L","19/01/2017","ROSINTA MARITO SIREGAR","3175018885","KELAS 3 C"],
-["ADAWIYA HARAHAP","P","10/12/2015","MAHDALENA HARAHAP","3154626536","KELAS 4 A"],
-["ALI AZHAR SIREGAR","L","01/02/2016","PUTRIANA HARAHAP","3169612513","KELAS 4 A"],
-["ALLY SYAH NIZAM PURBA","L","21/08/2016","YAFNI PRISTIWI SIREGAR","3160997266","KELAS 4 A"],
-["ALOGO LANGKIMAT HARAHAP","L","20/02/2016","RIA ANJELINA SIMAMORA","3161510429","KELAS 4 A"],
-["ANGGI HASNAINI HARAHAP","P","03/02/2016","ARBAIYAH POHAN","3160591427","KELAS 4 A"],
-["AZRIL ALFARIZQI SIREGAR","L","04/07/2016","ASRINA HARAHAP","3160047109","KELAS 4 A"],
-["DEWI LESTARI HRP","P","31/12/2014","RAMAYANA SIREGAR","142618288","KELAS 4 A"],
-["FAHREZI SIREGAR","L","24/10/2015","WILDA PUTRI RAHAYU","3156074371","KELAS 4 A"],
-["FAUZAN SHIHAB AL ZAMAN HARAHAP","L","25/05/2016","SAMSIDERNI SIREGAR","3169123227","KELAS 4 A"],
-["J. DANIEL SIREGAR","L","07/02/2016","MARIANA HASIBUAN","3162697630","KELAS 4 A"],
-["KARIMAH PUTRI NASUTION","P","09/01/2016","NUR AMINAH HARAHAP","3163132489","KELAS 4 A"],
-["LUTHFI ALGHAZALI P.N.MANIK","L","29/05/2016","ERLINDA WARNI RAMBE","3165073299","KELAS 4 A"],
-["MAULANA HATIM TANGGUH","L","14/02/2016","ELFIYANTI","3163116746","KELAS 4 A"],
-["MELINDA ASSYFA","P","09/01/2016","ROS MAIDA ARAHAP","3164108694","KELAS 4 A"],
-["MUHAMMAD FAJAR HARAHAP","L","16/05/2016","NURPAUJIAH SIREGAR","3160630821","KELAS 4 A"],
-["MUHAMMAD HAFIZ","L","29/07/2016","NURSIMA HASIBUAN","3167317482","KELAS 4 A"],
-["NAUFAL AZKA NST","L","16/08/2016","ZAKIYAH LUBIS","3166443224","KELAS 4 A"],
-["NAURA AMELIA SINURAT","P","03/04/2016","JUNI DAMA YANTI MARPAUNG","3163755290","KELAS 4 A"],
-["NINDI RAMADHANI HASIBUAN","P","30/06/2016","MINDA MORA RAMBE","3161607414","KELAS 4 A"],
-["NUR BINTAN SHOLIHAH HSB","P","30/04/2016","EKA MARLINA","3167790751","KELAS 4 A"],
-["PADHIL DAFFA HARAHAP","L","29/02/2016","SUSI SUSANTI SIREGAR","3164420684","KELAS 4 A"],
-["REYHAN SAHPUTRA TANJUNG","L","20/08/2016","UBA ANNASARI HARAHAP","3163438014","KELAS 4 A"],
-["SAKIRA BILQIS RAMBE","P","08/08/2015","NUR KHASANAH HUTASUHUT","3159767157","KELAS 4 A"],
-["SALSABILA HARAHAP","P","01/11/2015","NURMAHAJA PULUNGAN","158611591","KELAS 4 A"],
-["SYAKILA RAHMADANI HARAHAP","P","22/01/2016","ASMIDAR","3162732182","KELAS 4 A"],
-["ZAIDAN ALFARISY HARAHAP","L","20/02/2016","WINDA AGUSTINA SIREGAR","3166894787","KELAS 4 A"],
-["ABDI HALIM KHADAFI SIREGAR","L","14/03/2016","NELI KARTINI HARAHAP","3169090930","KELAS 4 B"],
-["ADLAN RIDO HASIBUAN","L","10/05/2016","ROSLAN","3167418709","KELAS 4 B"],
-["AHMAD ADZAN SHUBUH SIREGAR","L","22/05/2016","MASWIDA PULUNGAN","3162977053","KELAS 4 B"],
-["ALINA ELITIA HASIBUAN","P","22/05/2016","LINDA YULIATI TANJUNG","3165831165","KELAS 4 B"],
-["ANGGINA RAMADHANI SIREGAR","P","30/06/2016","SERI SONZA MAHRENI NASUTION","3163093657","KELAS 4 B"],
-["AUFAL NANDO SIREGAR","L","13/11/2015","AGUSTINA HARONIA NASUTION","3153764591","KELAS 4 B"],
-["BIMA SAKTI PUTRA TANJUNG","L","15/07/2016","ANNA CHOLILA SIREGAR","3160114099","KELAS 4 B"],
-["HAFIDZ TAMPAN SIREGAR","L","09/07/2015","HANNUM HARAHAP","3152728049","KELAS 4 B"],
-["HOTMAN PARIS SIREGAR","L","15/09/2016","JUGI HENTINA SIREGAR","3166623274","KELAS 4 B"],
-["IJABAH ROMAITO HARAHAP","P","20/07/2016","NURKHOLIJA SIREGAR","3167289411","KELAS 4 B"],
-["IMAM WAHYUDI","L","25/02/2016","LILI IDAWATI DLT","3168383317","KELAS 4 B"],
-["KENZIE MUADZAN DAULAY","L","28/06/2016","INTAN SARI BULAN HARAHAP","3161627466","KELAS 4 B"],
-["KEYZHA NAURA HARAHAP","P","11/06/2016","ELFI AGUSTINA DALIMUNTHE","3169210956","KELAS 4 B"],
-["MELODY FIKA BR MALAU","P","13/11/2015","IPONG BR RAJA GUK GUK","3159989141","KELAS 4 B"],
-["MIFTAHUL FAUZIAH","P","04/01/2016","IRNA SIREGAR","3167894178","KELAS 4 B"],
-["MOZA UMAIZAH TANJUNG","P","08/03/2016","ASRO SIREGAR","3166462875","KELAS 4 B"],
-["MUHAMMAD RIZKY SALAM HARAHAP","L","16/12/2015","ROMLAINI SIREGAR.","3150602030","KELAS 4 B"],
-["NAZLA KHOPIPAH HARAHAP","P","28/02/2016","ROSNIDA SIREGAR","3165871155","KELAS 4 B"],
-["PAQIH SIREGAR","L","10/02/2016","ERMIDA WATI HARAHAP","3168429268","KELAS 4 B"],
-["RAJA LUTHFI PRATAMA NAWAR","L","25/01/2016","SITI MARYAM HARAHAP","3160689071","KELAS 4 B"],
-["RASYIQAH ZAHRA PULUNGAN","P","22/08/2015","RAMONA SIREGAR","3158155677","KELAS 4 B"],
-["RINI ADELINA HASIBUAN","P","26/06/2016","INDAH JUNIATI HARAHAP","3168233004","KELAS 4 B"],
-["RIZKY RAMADHAN SIREGAR","L","05/07/2016","IDA ROYANI HARAHAP","3168983554","KELAS 4 B"],
-["RUKUN DAMAI SIREGAR","L","24/03/2016","ROYANI SIREGAR","3165180320","KELAS 4 B"],
-["ZAINAL HABIBI","L","02/01/2016","ROSLAINI TANJUNG","3167113287","KELAS 4 B"],
-["ABDUL HAFIZ HASIBUAN","L","20/05/2016","MARLINA HENI RITONGA, AM.KEB","3160492979","KELAS 4 C"],
-["AKIFA NAILA POHAN","P","23/08/2015","ANNISA FITRI HARAHAP","3158030515","KELAS 4 C"],
-["AKILAH PUTRI SIREGAR","P","29/06/2016","NOLA GUSTIA RINDAM DAULAY","3169222801","KELAS 4 C"],
-["AMIRA PERMATA SARI HASIBUAN","P","13/05/2016","DARLINA SARI HARAHAP","3169567488","KELAS 4 C"],
-["ANGGI DINARA PUTRI HABIBI NASUTION","P","25/07/2016","HENNI TRISNAWATI HARAHAP","3166100690","KELAS 4 C"],
-["ARYSA KHOIRO SIREGAR","P","16/03/2016","HENNI MAHYUNI HARAHAP","3168142865","KELAS 4 C"],
-["ASIFAH MURANDA SUBAKTI","P","11/05/2016","INDAH PERMATA SARI HASIBUAN","3169628245","KELAS 4 C"],
-["AZHARI ALAMSYAH TANJUNG","L","17/03/2015","NUR MAHARI HARAHAP","3150790298","KELAS 4 C"],
-["AZIZAH ADEEVA KHANZA NASUTION","P","29/01/2016","ADE IRMA SURYANI NASUTION","3163214859","KELAS 4 C"],
-["AZIZAH SAHRANI DALIMUNTHE","P","16/01/2016","LELY MARIATI HARAHAP","3168468405","KELAS 4 C"],
-["AZKA FARWANSYAH MUDA","L","03/06/2016","ZAHRIA FITRI HASIBUAN","3168305842","KELAS 4 C"],
-["AZKIA SARI SIREGAR","P","16/04/2016","DAHNIAR SIMBOLON","3162953442","KELAS 4 C"],
-["AZRIL ALFANDY SRG","L","13/03/2016","HOTNAULI HARAHAP","3162900672","KELAS 4 C"],
-["AZRIL YUSUF LUBIS","L","05/11/2015","MONCOT ADIANI","3151250998","KELAS 4 C"],
-["BAYEZID AL-FAKIH","L","12/07/2016","KELLYANA DAULAY, AM.KEB","3162198983","KELAS 4 C"],
-["DAFFA HILAL ISMAIL HASIBUAN","L","14/03/2016","NURAINA BATUBARA","3168931128","KELAS 4 C"],
-["DINAR FATHAN HASIBUAN","L","27/01/2016","INDAH LESTARI SIREGAR","3161142124","KELAS 4 C"],
-["FATHIYA AULIA NISA HARAHAP","P","20/06/2016","JUNIDAR SIREGAR","3164207782","KELAS 4 C"],
-["GADIS EMIA GINTING","P","28/06/2016","IRA AHMITA POHAN","3163539422","KELAS 4 C"],
-["NAZLA FAHIMA ZIKRA SIMAMORA","P","22/12/2015","NURHANIFAH HARAHAP","3153100062","KELAS 4 C"],
-["PUTRI AYUDIYA SIREGAR","P","28/12/2015","ELJI SUSANTI","3154333267","KELAS 4 C"],
-["PUTRI RAHMADANI HARAHAP","P","12/05/2016","ADE EMMIAYANA","3168848920","KELAS 4 C"],
-["WIRDA SALAMAH NAIFA","P","21/07/2016","ANISATUN AHYAN","3161342514","KELAS 4 C"],
-["YOSSI ARIANI SIREGAR","P","02/12/2015","ISRONIATI HARAHAP","3157801405","KELAS 4 C"],
-["ZIDANE HASIHOLAN","L","17/02/2017","CICI DERITA SIREGAR","3163869744","KELAS 4 C"],
-["AFIQA NAHDA DAULAY","P","14/06/2015","TIUR MAULIANI","3152549535","KELAS 5 A"],
-["AHMAD FADIL HARAHAP","L","10/04/2015","SITI SAHARA HASIBUAN","3150697695","KELAS 5 A"],
-["AKMAL ZAILANI POHAN","L","11/03/2015","SITI FATIMAH","3159452962","KELAS 5 A"],
-["ALI RAJAB SIMAMORA","L","16/05/2015","JUWITA ANGGIAN SINAGA","3151369049","KELAS 5 A"],
-["AMIRA NUR SALAMAH HASIBUAN","P","14/08/2015","SITI RAHMA SIREGAR","3159024140","KELAS 5 A"],
-["ARBISANIT SIR","L","11/02/2015","SITI AYSAH HRP","3150947438","KELAS 5 A"],
-["ASRAF ARRASYID SIREGAR","L","09/04/2015","SITI SANG SURYA HARAHAP","158333012","KELAS 5 A"],
-["AZRA AQILA HASIBUAN","P","29/05/2015","DERMIATI SIMANJUNTAK","3153237961","KELAS 5 A"],
-["DAFFA GUSTI RAHMAN HASIBUAN","L","06/05/2015","MUTIATUR RIBIHANI","3151646703","KELAS 5 A"],
-["ELSA FAHIRA DAULAY","P","28/11/2014","NOVA RINA SIREGAR","3146378415","KELAS 5 A"],
-["FANY SYAFITRI SIREGAR","P","18/05/2015","JURIATI HARAHAP","3150289615","KELAS 5 A"],
-["HAFIZ AZHARI HARAHAP","L","07/08/2015","NURHOLIDA DALIMUNTE","3156910920","KELAS 5 A"],
-["HAIKAL PARDA RIZKY SIREGAR","L","27/12/2014","SOUPI ANDRIANI HARAHAP","149735610","KELAS 5 A"],
-["ILHAM KURNIAWAN TANJUNG","L","16/05/2015","MARIA ULFA PANGGABEAN","3158807532","KELAS 5 A"],
-["IQBAL KHAIRUN NAFIS HARAHAP","L","10/05/2015","MASJULI ARNI HRP","3156819290","KELAS 5 A"],
-["IRFAN AZIZ SIREGAR","L","12/12/2015","APNI RAYANI BATUBARA S.PD","3153451026","KELAS 5 A"],
-["KAYLA MARITO SIHOTANG","P","08/12/2014","ROSMAYANTI HARAHAP","3145601651","KELAS 5 A"],
-["KHOIRUL FAZRI HARAHAP","L","01/02/2015","KASMINAR SGR","3157856174","KELAS 5 A"],
-["MHD. AZKA AL-AMIN HSB","L","09/05/2015","ANITA JULIANTHI","3150547299","KELAS 5 A"],
-["MUHAMMAD WAHID HAKAM HARAHAP","L","26/10/2014","EFRINA RAYA","3140742521","KELAS 5 A"],
-["NADZHIFAH WAHYUNI NAINGGOLAN","P","20/01/2015","EVITA MASTIANI PANE, S.PD","158614482","KELAS 5 A"],
-["NAGITA PUTRI DAULAY","P","06/07/2015","SAIDA MAYANTI HARAHAP","3156422233","KELAS 5 A"],
-["NUR HASANAH SIREGAR","P","08/12/2014","SAHRIANI POHAN","3142993210","KELAS 5 A"],
-["PADLI DALIMUNTHE","L","24/04/2015","NUR HAMIDAH SIREGAR","3159890108","KELAS 5 A"],
-["PUTRI MAHARANI SIMBOLON","P","27/07/2014","FATIMAH HOT AINI SIR","3141340781","KELAS 5 A"],
-["QIANDRA FITRI ENDERLAN SIR","P","12/08/2015","NURLAILAN HASIBUAN","3154930420","KELAS 5 A"],
-["RAHMA KAMILA HARAHAP","P","24/06/2015","AMNA MINTA SIREGAR","3153059020","KELAS 5 A"],
-["REZA ALFATHONA","L","15/01/2015","ARNITA","3150764852","KELAS 5 A"],
-["SIFA HUMAIRAH SIREGAR","P","06/09/2014","REHAMSA HARAHAP","3149392476","KELAS 5 A"],
-["THALITA RAFA KARIMAH DAULAY","P","23/10/2014","SRI WAHYUNI SIREGAR","3148853990","KELAS 5 A"],
-["TIRTA CASMITA HARAHAP","L","23/10/2014","NINA ASTINA HASIBUAN","3145939044","KELAS 5 A"],
-["TONDI WIJAYA SIREGAR","L","24/11/2014","YUSNIA","142290737","KELAS 5 A"],
-["UFAIRA ASSYABIYA RAFIFA","P","18/08/2015","WINNI CAHYANA SIREGAR","3159569221","KELAS 5 A"],
-["UWAIS FARHAN SIREGAR","L","16/07/2015","SAIBATUL ASLAMIYAH HARAHAP","3158861901","KELAS 5 A"],
-["YOGI ANDREAN","L","26/05/2015","ASPIANA SARI HASIBUAN","3150363911","KELAS 5 A"],
-["YUSRI FAHIMATUL ULUM HARAHAP","P","13/10/2015","SITI ANUN SIREGAR","3150554719","KELAS 5 A"],
-["ZAHRAN SHABIR POHAN","L","20/07/2014","ANNISA FITRI HARAHAP","3146341279","KELAS 5 A"],
-["ZULMI IKHWAN RAMBE","L","22/10/2015","SINTA ARIANI SIREGAR","3158797451","KELAS 5 A"],
-["ABDUL PAHRUL HARAHAP","L","28/02/2015","NURHAPSAH","3154528691","KELAS 5 B"],
-["ABIDAH AL MUTSIRO","P","05/09/2015","DEWI WARNI SIREGAR","3157145125","KELAS 5 B"],
-["ADRIAN KLEIVESEAN PURBA","L","01/11/2014","RIRIS MARITO BR SIMANJUNTAK","3141296688","KELAS 5 B"],
-["AFIQA UFAIRAH LUBIS","P","21/04/2015","MASRONA HSB","3157026599","KELAS 5 B"],
-["AHMAD FADHIL AL-JUMAR","L","20/03/2015","IMELDA NASUTION","3150437654","KELAS 5 B"],
-["AIDA FITRIAH SIMAMORA","P","27/06/2015","MORINA SARI HASIBUAN","3153160231","KELAS 5 B"],
-["AKBAR RIZKI BAGO","L","13/04/2015","ASMIDA SARI","3150832024","KELAS 5 B"],
-["ANGGINA PUTRI","P","24/11/2015","LILI ADIANI ZEBUA","3155552776","KELAS 5 B"],
-["AQILA SYIFAUL HANI SIREGAR","P","28/03/2015","ARMA AISYAH","3151678040","KELAS 5 B"],
-["AYU WANDIRA PULUNGAN","P","12/10/2014","SORI SITI HRP","3144162991","KELAS 5 B"],
-["BAYO SAMUDRA AL BAQI SIREGAR","L","22/10/2014","NOPIDA MASTIA HARAHAP","3142924919","KELAS 5 B"],
-["GILANG ADIANSYAH HARAHAP","L","11/01/2015","REVITAMALA HASIBUAN","3156520530","KELAS 5 B"],
-["HAFIZD MAHARDIKA","L","02/10/2014","SAIDA ISMA HASIBUAN","3147399948","KELAS 5 B"],
-["KHUMAIRAH AL-ATHIYAH HASIBUAN","P","14/06/2015","EVA SANTY RAMBE","3151320599","KELAS 5 B"],
-["M. RIZKI ANANDA SIREGAR","L","06/01/2015","SERI SONZA MAHRENI NASUTION","3150825592","KELAS 5 B"],
-["MARIA MERYRISKA","P","15/05/2015","LIDIYA DEVEGA SIRAIT","3154539668","KELAS 5 B"],
-["MHD. ERDOGAN HSB","L","09/06/2015","DAHNIATI SIREGAR","3150577186","KELAS 5 B"],
-["MUHAMMAD AGUS SALIM SIREGAR","L","04/08/2014","IKE MARIANI","3147761838","KELAS 5 B"],
-["MUHAMMAD DAFA SIREGAR","L","06/12/2014","SRI MALAYATI HASIBUAN","144980335","KELAS 5 B"],
-["MUHAMMAD RIZKY HASIBUAN","L","07/09/2015","NUR MAHAJA HARAHAP","3153304719","KELAS 5 B"],
-["MUHAMMAD ZIQRAN ALGAZALI HARAHAP","L","02/08/2014","NURHAIDA HASIBUAN","3149788501","KELAS 5 B"],
-["NASHIYAH MARWAH HARAHAP","P","13/02/2015","PATIMAH HASIBUAN","3154578269","KELAS 5 B"],
-["NAUFAL ALFARIZY HARAHAP","L","18/03/2015","NENY PITRIANI SIREGAR","3151510380","KELAS 5 B"],
-["NIDA HAFIFAH SIREGAR","P","17/09/2014","NUR AISYAH TANJUNG","3143270628","KELAS 5 B"],
-["NUR KHALIJAH HARAHAP","P","12/10/2014","ELFINAHARI HASIBUAN","3147427275","KELAS 5 B"],
-["PRIZKA AZZALEA ANORA POHAN","P","17/05/2015","EKA YUSNITA","3157014037","KELAS 5 B"],
-["PUSVITA SARI SIREGAR","P","10/05/2014","RISNA WATI DAULAY","3144343852","KELAS 5 B"],
-["QOIS ALMAHSURIN","L","03/05/2014","DEWI WARNI SIREGAR","3149509746","KELAS 5 B"],
-["RADHI ALFATIR SIREGAR","L","19/04/2015","KHAIRANI","3154950209","KELAS 5 B"],
-["RAJA NAPOSO HASIBUAN","L","29/12/2014","ARRIDA HELPI HARAHAP","3144400114","KELAS 5 B"],
-["SAPRIADI HRP","L","26/10/2014","SAINEM NASUTION","3145480009","KELAS 5 B"],
-["SHAFA SALSABILA HARAHAP","P","15/06/2015","HASNURITA SIREGAR","3157827948","KELAS 5 B"],
-["SRI MULYANI HASIBUAN","P","22/10/2014","RATNA DEWI PASARIBU","3142718483","KELAS 5 B"],
-["SUCI RAMADHANI SIREGAR","P","27/06/2015","ENTIANI HARAHAP","3150074590","KELAS 5 B"],
-["ABDUL FAHMI SIREGAR","L","18/08/2013","INSAN SAKURA HASIBUAN","139743568","KELAS 6 A"],
-["AGHIEL MUDA PRATAMA HSB","L","22/05/2013","ERMINAWATI DAULAY","132781702","KELAS 6 A"],
-["AISYAH HARAHAP","P","16/12/2013","ROMLAINI SIREGAR","3139927843","KELAS 6 A"],
-["ANDRA ASRIZAL","L","21/12/2013","ENNI ASWANI HUTASUHUT","3132846194","KELAS 6 A"],
-["APIQAH SYALWA SIREGAR","P","05/05/2014","SARI BULAN HRP","3143063593","KELAS 6 A"],
-["AQILA AMIRAH HARAHAP","P","23/08/2014","ELMINA SARI DAULAY","3149500662","KELAS 6 A"],
-["ASSYIFA KAYLA PUTRI SIREGAR","P","05/09/2013","SITI GAHARA HARAHAP","133783625","KELAS 6 A"],
-["DEA ANGGUN SIREGAR","P","07/12/2013","IDA SANTI HASIBUAN","3133530564","KELAS 6 A"],
-["EKRAL HARAHAP","L","05/09/2013","MARLIANI SIREGAR","139867078","KELAS 6 A"],
-["FADIL AKBAR DALIMUNTHE","L","23/07/2013","IDA ROYANI HARAHAP","3137878904","KELAS 6 A"],
-["HARIANSYAH NASUTION","L","05/01/2014","DESI MORINA SIREGAR","3141303726","KELAS 6 A"],
-["IHWAN SYAHPUTRA HARAHAP","L","07/11/2013","LINDA YANTI","3137219365","KELAS 6 A"],
-["KEISHA NAURA NADHIFA HARAHAP","P","30/11/2013","EFRINA SUSANTI PULUNGAN","3138457853","KELAS 6 A"],
-["KHOIRUL FUAD HASIBUAN","L","24/08/2013","FATIMA SARI SIREGAR","3134840302","KELAS 6 A"],
-["LAMORA AISYAH NASUTION","P","13/01/2014","ROSITO HASIBUAN","143424499","KELAS 6 A"],
-["MARWAH DAULAY","P","25/06/2014","IRMA KARTIKA HARAHAP","3146040938","KELAS 6 A"],
-["MHD. AFFANDI HARAHAP","L","12/02/2014","PATIMAH HASIBUAN","3147246761","KELAS 6 A"],
-["NADHIFA MAHIRA NASUTION","P","06/04/2014","ZAKIYAH LUBIS","3147533524","KELAS 6 A"],
-["PUTRI RAHMALIANI SIREGAR","P","03/01/2014","MAHYUNA DAULAY","3147950939","KELAS 6 A"],
-["RAHMAD LIL ALAMIN POHAN","L","17/09/2013","TIAWAN SIREGAR","3132878156","KELAS 6 A"],
-["RAISYA KHAIRA NAZWA HASIBUAN","P","01/02/2014","NILA SARI SIREGAR","142301693","KELAS 6 A"],
-["RANIA ALISSYA PUTRI S","P","23/08/2014","ISRONIATI HARAHAP","3142336668","KELAS 6 A"],
-["SUCI YANTI RANANDA","P","13/08/2011","PARSINEM","3119641399","KELAS 6 A"],
-["WINDY NADRA SALSABILA","P","19/11/2013","MASRIANA HARAHAP","3135615331","KELAS 6 A"],
-["YUSNI PERMATA HARAHAP","P","20/11/2013","NURMAHARI SIREGAR","132309359","KELAS 6 A"],
-["ABDILLAH AL-FAUZAN SIMBOLON","L","22/01/2014","IRMA SURIANI","3144702634","KELAS 6 B"],
-["AIZAR AL-FAZRI DALIMUNTHE","L","23/07/2014","SITI FAUZIAH HARAHAP","144988012","KELAS 6 B"],
-["ANNISA KHOIRIAH HASIBUAN","P","02/06/2014","MURNI DAHLENA","141048775","KELAS 6 B"],
-["AQILAH NAZHIFA HARAHAP","P","26/08/2014","NURPAUJIAH SIREGAR","3143005845","KELAS 6 B"],
-["ARSYIL RAHMAN NASUTION","L","15/04/2014","ROS MANIDAR SPD","3140717929","KELAS 6 B"],
-["AULIA NOVI YANTI HUTASUHUT","P","24/11/2013","PATIMAROS","3135422384","KELAS 6 B"],
-["BINTA RAMADANI SIREGAR","P","20/07/2014","SITI JAMIAH HARAHAP, S.PD","3146786518","KELAS 6 B"],
-["CAISAR HAMDANI AL-TAHER SIREGAR","L","10/10/2013","NETTY HERAWATI","3135268834","KELAS 6 B"],
-["FADHEL RAHMAT SYAHPUTRA TANJUNG","L","04/04/2014","MARIA ULFA PANGGABEAN","3140783319","KELAS 6 B"],
-["FAIZAH INDRY","P","18/04/2014","KHOLIZA NASUTION","3144614627","KELAS 6 B"],
-["HASAN ABDURRAHMAN HRP","L","10/09/2013","DESNORA SAHRIATY SIREGAR","3131334600","KELAS 6 B"],
-["HOTMAYSAROH HSB","P","10/06/2014","NUR HAYATI SIREGAR","3144062793","KELAS 6 B"],
-["IMEL PUTRI C TANJUNG","P","11/05/2014","EMMI YULINDA HASIBUAN","3141867943","KELAS 6 B"],
-["MARDIAH SIREGAR","P","08/08/2014","DONA SOPIA HARAHAP","3141544058","KELAS 6 B"],
-["MUHAMMAD SUTAN KHANAFI HASIBUAN","L","13/01/2014","ROSMALA NASUTION","3140889775","KELAS 6 B"],
-["NAUFAL AFKAR HASIBUAN","L","10/09/2013","MINDA MORA RAMBE","3134191676","KELAS 6 B"],
-["NAZRIL AMAS PRATAMA HASIBUAN","L","20/02/2014","INDAH LESTARI SIREGAR","3149211301","KELAS 6 B"],
-["NURUL DALISHA SIREGAR","P","23/08/2014","RINA SALPITA LUBIS","3149409520","KELAS 6 B"],
-["PAIS","L","16/06/2013","NEPI ERIDA","3135046659","KELAS 6 B"],
-["PUTRI MAIMUNAH SIHOTANG","P","09/05/2014","WITA SAHRANI HARAHAP","3140457200","KELAS 6 B"],
-["RAHMA MUFIDA NASUTION","P","12/06/2014","MASROIDA SIREGAR","3146985457","KELAS 6 B"],
-["RAHMAT TARMIZI HRP","L","11/04/2014","ASROINI PULUNGAN","3137946136","KELAS 6 B"],
-["SINTIA BELLA SIREGAR","P","03/10/2014","DASARI","3148331451","KELAS 6 B"],
-["SULTAN RAON SIREGAR","L","16/12/2013","NURAINI","132709984","KELAS 6 B"],
-["AFIKA ANASTASYA SIREGAR","P","25/12/2013","ANNY KHOLILA HASIBUAN","3136112197","KELAS 6 C"],
-["AFRAH AQILAH HARAHAP","P","11/12/2013","AGITA MARIANTI SIMAMORA","3132130547","KELAS 6 C"],
-["ALPIAN RIZKIE HARAHAP","L","22/04/2014","DEWI SAHRIA SIREGAR","3142579101","KELAS 6 C"],
-["ALYA KHANZA HARAHAP","P","05/07/2014","DIANA SARI SIREGAR","3143441672","KELAS 6 C"],
-["AMRI PRATAMA NASUTION","L","12/05/2014","RISKI ADE PUTRI HARAHAP","3147969195","KELAS 6 C"],
-["ARPAN SAFUTRA SIREGAR","L","29/12/2013","ROSMAIDA PULUNGAN","3137412884","KELAS 6 C"],
-["ARYA PRATAMA HRP","L","11/01/2014","DESTINA SARI","3147448942","KELAS 6 C"],
-["ASIA ZAHRA TANJUNG","P","10/02/2014","MISDARI YANTI HRP","149998863","KELAS 6 C"],
-["BILQIS UFAIRA GINTING","P","22/02/2014","IRA AHMITA POHAN","149354976","KELAS 6 C"],
-["DIANDRA AMIRA ERFA SIREGAR","P","20/02/2014","FARHAH MEUTHIA","149245218","KELAS 6 C"],
-["DINDA ALYA HASIBUAN","P","15/12/2013","TUKMADIAN NOPITA HARAHAP","135089862","KELAS 6 C"],
-["FADLAN HAMID HASIBUAN","L","13/10/2013","RULIATI SIREGAR","137063816","KELAS 6 C"],
-["FADLAN HANAFI NAPITUPULU","L","23/05/2014","SITI HELMI DAWANI HSB","149009332","KELAS 6 C"],
-["HABIB SIDDIQ ZUHAIRI","L","13/09/2014","EKA RIZIANI HARAHAP","3149525327","KELAS 6 C"],
-["HUMAIRA PUTRI KUSUMA HASIBUAN","P","11/10/2013","DEVI HERIANI SIREGAR","3138856803","KELAS 6 C"],
-["IRWAN HARAHAP","L","08/02/2014","LINDA YANTI","148726249","KELAS 6 C"],
-["LUADY AL RAIHAN DAULAY","L","20/05/2014","ENDANG STAURINA HASIBUAN","149319120","KELAS 6 C"],
-["MUHAMMAD PAUL HARAHAP","L","03/09/2013","HOTJULIANI SIREGAR","3135782785","KELAS 6 C"],
-["MUNA WAROH NASUTION","P","09/09/2013","RISNA SARI HUTASUHUT","3136471848","KELAS 6 C"],
-["NAILAH PERMATA HASIBUAN","P","19/01/2014","HUSNATUL FAUJIA HARAHAP","3140835252","KELAS 6 C"],
-["NAURA AQILA ZAHRA HASIBUAN","P","09/09/2013","DERMAWANTI SIREGAR","3131211692","KELAS 6 C"],
-["NAZIAH NAILA SIREGAR","P","04/10/2013","PUTRIANA HARAHAP","3133743725","KELAS 6 C"],
-["SYAKIRA KHAIRUNNISA HARAHAP","P","21/04/2014","SARTINA WAHDINI SIREGAR","3147392798","KELAS 6 C"]
+            ["ADEIRAH AZZAHRA HARAHAP","P","08/10/2018","SITI ROPIDA SIREGAR","3186051665","KELAS 1 A"],
+            ["AISYAH RIZKI HASIBUAN","L","20/04/2019","NURMA WATI","3197603420","KELAS 1 A"],
+            ["ANKA WIJAYA HASIBUAN","L","09/07/2019","NELLI ANGRIANA LUBIS","3192929500","KELAS 1 A"],
+            ["ANNAYLA RIZKIYAH HARAHAP","P","06/06/2019","MARTIKA SARI JAMBAK","3197104870","KELAS 1 A"],
+            ["AQILA ZAHRA POHAN","P","19/12/2018","ANNISA FITRI HARAHAP","3187992141","KELAS 1 A"],
+            ["ARIQ ZEIN AHMAD HARAHAP","P","16/05/2019","VIVI YANTI SIREGAR","3192697326","KELAS 1 A"],
+            ["BENA APRIANI AMELIYAH HSB","P","14/04/2019","NUR HAYATI SIREGAR","3192803193","KELAS 1 A"],
+            ["CAHYA MEDINA DAULAY","P","27/05/2019","IRMA KARTIKA HARAHAP","3199067396","KELAS 1 A"],
+            ["FAHIRA AZ-ZAHRA","P","25/03/2019","KHOLIZA NASUTION","3199380623","KELAS 1 A"],
+            ["FATIMAH SARI AZZAHRA SIREGAR","P","27/12/2018","MARNI ARIANI NASUTION","3180963634","KELAS 1 A"],
+            ["ILHAM ROSADY HARAHAP","L","29/05/2019","MASRIANI SIREGAR","3197135677","KELAS 1 A"],
+            ["JIHAN SYARIF HARAHAP","P","27/05/2019","AULIDA AZMI BORU MUNTHE","3191011815","KELAS 1 A"],
+            ["KURNIAWAN TANJUNG","L","18/04/2019","AINUN SAIMA SIREGAR","3199071551","KELAS 1 A"],
+            ["MASLAN HASIBUAN","P","09/12/2018","ARRIDA HELPI HARAHAP","3189384381","KELAS 1 A"],
+            ["MAULANA HAKIM HARAHAP","L","03/09/2018","RINAYANTI","3183386964","KELAS 1 A"],
+            ["MUHAMMAD FAIZ HARAHAP","L","17/03/2019","ROMAITO","3198028802","KELAS 1 A"],
+            ["MUHAMMAD NABIL AL GIFARI HARAHAP","L","28/07/2019","WIRDA FUZI LESTARI NASUTION","3198769422","KELAS 1 A"],
+            ["NADIYA PUTRI DAULAY","P","30/10/2018","SAIDA MAYANTI HARAHAP","3180382692","KELAS 1 A"],
+            ["NURSAMIMA SIREGAR","P","23/10/2018","ROBIATUL ADAWIAH","3181174590","KELAS 1 A"],
+            ["QAIREEN SHANUM NAMORA HASIBUAN","P","21/10/2018","DERMAWANTI SIREGAR","3181047898","KELAS 1 A"],
+            ["RAICENRA DINATA NAPITU","L","26/03/2019","MASLIANA PURBA","3191312121","KELAS 1 A"],
+            ["REFA PRADITA ARYOS","P","22/06/2018","YOSINOFA LUSIANA","3183543248","KELAS 1 A"],
+            ["REFAN PRANATA ARYOS","L","22/06/2018","YOSINOFA LUSIANA","3181890738","KELAS 1 A"],
+            ["SELINA ZAHIRA IMANTA TANJUNG","P","16/11/2018","AMINAH FAJRI HARAHAP","","KELAS 1 A"],
+            ["SINTIA FANNY","P","06/08/2018","IRNANIRWANA SIREGAR","3180574538","KELAS 1 A"],
+            ["SULTAN PARLINDUNGAN HASIBUAN","L","09/12/2018","SRI REZKY FAUJIATI HARAHAP","3186505287","KELAS 1 A"],
+            ["SUMAYYAH ASY-SYAHIDAH HARAHAP","P","01/06/2019","EVA MAHRANI","3199668540","KELAS 1 A"],
+            ["ZEFANYA EVELYN SIHALOHO","P","08/05/2019","LIDIYA DEVEGA SIRAIT SH","3195769823","KELAS 1 A"],
+            ["ADIBA SYILAH","P","27/02/2019","INDAH PRASTIWI","3193301045","KELAS 1 B"],
+            ["ADILA KHALISA","P","13/03/2019","NURAYGA","3193735853","KELAS 1 B"],
+            ["AFIF ALZAYDAN","L","22/08/2019","MINTAITO","3196116300","KELAS 1 B"],
+            ["AFLAHUL FAIZ HASIBUAN","L","29/08/2018","MARLINA HENI RITONGA, AM.KEB","3187360646","KELAS 1 B"],
+            ["AHMAD AZIZ SANUSI NASUTION","L","07/08/2019","ADE IRMA SURYANI NASUTION","3196008697","KELAS 1 B"],
+            ["AHSAN MARUDIN HARAHAP","L","24/04/2019","NURKHOLIJA SIREGAR","3195596766","KELAS 1 B"],
+            ["AIRA NADHIFAH SIREGAR","P","17/02/2019","ENNI ROMANDA SARI HARAHAP","3190237050","KELAS 1 B"],
+            ["AKMAL SAFIIY","L","17/09/2019","ROSMAIDA PULUNGAN","3192803867","KELAS 1 B"],
+            ["ANDRA HARAHAP","L","27/11/2018","HETTI YULIANI HARAHAP","3188493310","KELAS 1 B"],
+            ["ANDRI ANI HARAHAP","P","27/11/2018","HETTI YULIANI HARAHAP","3179869899","KELAS 1 B"],
+            ["ANIN DITA KEISA HARAHAP","P","04/01/2019","ADE EMMIAYANA","3191320879","KELAS 1 B"],
+            ["ANINDIA RISKI HARAHAP","P","04/01/2019","ADE EMMIAYANA","3197285023","KELAS 1 B"],
+            ["ANINDYA MIKHAILA SIREGAR","P","23/11/2018","DIAN MAHRANI HARAHAP","3183647237","KELAS 1 B"],
+            ["ANZANI ANINDYA PUTRI","P","28/06/2019","JELITA","3193799322","KELAS 1 B"],
+            ["ARFA ZERINA FAUZIYAH HARAHAP","P","06/03/2019","LISNA WATI HRP","3199245002","KELAS 1 B"],
+            ["AZRIEL AGUSLAN LUBIS","L","03/08/2019","YENNI ROSTIA SARI HASIBUAN","3191773511","KELAS 1 B"],
+            ["AZRIL MAHODUM HASIBUAN","L","19/10/2018","HAMNA HARAHAP","3183905378","KELAS 1 B"],
+            ["DILAN ALFA RIZKI HARAHAP","L","01/04/2019","NURHOLIDA DALIMUNTE","3195542317","KELAS 1 B"],
+            ["DZAKIR ANUGRAH RAMADHAN HRP","L","28/05/2019","DESNORA SAHRIATY SIREGAR","3199719630","KELAS 1 B"],
+            ["HANNAH QANITA HARAHAP","P","28/03/2019","ROMAYANTI NAIBAHO","3199166402","KELAS 1 B"],
+            ["KHALISA KHAIRANI NASUTION","P","15/07/2019","RISNA SARI HUTASUHUT","","KELAS 1 B"],
+            ["MHD.UMAIR ALFATIH HRP","L","25/09/2018","HOTRINASARI NASUTION","3188995248","KELAS 1 B"],
+            ["MUAMMAR KHADAFI NASUTION","L","12/04/2019","ERLINA WATI HARAHAP","3191598227","KELAS 1 B"],
+            ["NADIRA AZ ZAHRA NASUTION","P","05/11/2018","LISNAWATI LUBIS","3188973862","KELAS 1 B"],
+            ["QIANA MARITO HASIBUAN","P","14/10/2018","DERMIATI SIMANJUNTAK","3188025000","KELAS 1 B"],
+            ["SAHDIA POHAN","P","20/11/2018","LILI IDAWATI DLT","3186255404","KELAS 1 B"],
+            ["SUCI RAMADHANIHARAHAP","P","17/05/2019","ARNIDA SARI DAULAY","3196063107","KELAS 1 B"],
+            ["ZAURA KASIH DILARA DAULAY","P","04/05/2019","ROSINTA MARITO SIREGAR","3194995140","KELAS 1 B"],
+            ["ADILA ALMA MARINA BATUBARA","P","04/05/2018","ELIANTI HASIBUAN","3184886425","KELAS 2 A"],
+            ["AHMAD SAIDI","L","31/08/2018","SITI RANI NASUTION","3187215990","KELAS 2 A"],
+            ["AIDIL FAZAR SIREGAR","L","23/06/2018","IRA MAYASOPA","3180561090","KELAS 2 A"],
+            ["AISYAH SILMI AFIQA TANJUNG","P","16/05/2017","FAUZIAH SIAGIAN","3173655524","KELAS 2 A"],
+            ["ALBAR SANI HASIBUAN","L","01/10/2017","HAFJO NASUTION","3174154025","KELAS 2 A"],
+            ["ALMA NAURA ANASTASYA HARAHAP","P","25/02/2018","SAMRIA LELI MARIANA","3183580835","KELAS 2 A"],
+            ["AQILLA FARIZA MUFIA HARAHAP","P","30/01/2018","JERNI FARIDA SIREGAR","3188001959","KELAS 2 A"],
+            ["ARRAFI FARZAN GINTING","L","20/08/2018","SAHNAZ PRATIWI SINAMBELA","3184387536","KELAS 2 A"],
+            ["ATHA ARSHAVIN","L","05/05/2018","CICI DERITA SIREGAR","","KELAS 2 A"],
+            ["ATIFA SYAFITRI SIREGAR","P","23/06/2018","IDA ROYANI HARAHAP","3183581137","KELAS 2 A"],
+            ["FEYZA WALMADINA HASIBUAN","P","03/11/2017","FITRI SURYANI HARAHAP","3179067086","KELAS 2 A"],
+            ["KHALISA ALMIRA DAULAY","P","01/01/2018","NOVA RINA SIREGAR","3185535820","KELAS 2 A"],
+            ["MUHAMMAD ADRIAN TOHIR HRP","L","30/07/2018","NOVITA NUR SIREGAR","3183053233","KELAS 2 A"],
+            ["MUHAMMAD HUSEIN HARAHAP","L","04/04/2018","MAHDALENA HARAHAP","3187986125","KELAS 2 A"],
+            ["MUHAMMAD IBNU ABDILLAH SIREGAR","L","27/05/2018","NOPIDA MASTIA HARAHAP","3180703006","KELAS 2 A"],
+            ["MUKHLIS ALFARIZI HASIBUAN","L","21/09/2017","RESTU FRATIWI NASUTION","3173190723","KELAS 2 A"],
+            ["NADIRA PUTRI AQILA HARAHAP","P","21/09/2017","RIA ANJELINA SIMAMORA","3175013354","KELAS 2 A"],
+            ["NAUFAL SYAHIR SIREGAR","L","27/10/2017","SOUPI ANDRIANI HARAHAP","3177307947","KELAS 2 A"],
+            ["NAYYARA IHZA SIREGAR","P","16/07/2018","ARMA AISYAH","3184731158","KELAS 2 A"],
+            ["NISMI KHAFIZAH NASUTION","P","11/12/2017","MARLY YENI SUSANTI TANJUNG","3173300805","KELAS 2 A"],
+            ["RIZKY FATIHAN SIREGAR","L","29/09/2017","JUNITA ROMADANI SIR","3170375519","KELAS 2 A"],
+            ["SALWA AMINAH SIREGAR","P","10/12/2017","NENNI TERIANA HARAHAP","3174191291","KELAS 2 A"],
+            ["SUCI ANNAMIRA SIREGAR","P","05/01/2018","MILDA WIRIANA PANE","3188142731","KELAS 2 A"],
+            ["SUKRI FAUZAN","L","13/03/2017","MARDIA HARAHAP","3178362451","KELAS 2 A"],
+            ["SY'INDI NIA RAHMADANI","P","23/05/2018","SUNARTI","3188415885","KELAS 2 A"],
+            ["WAHYU AL HASBY HASIBUAN","L","25/07/2018","LATIFAH HANUM HASIBUAN","3186090694","KELAS 2 A"],
+            ["WIDIA DARMA AISYAH","P","13/05/2018","ASNAINI","3188911460","KELAS 2 A"],
+            ["WIDIA DARMA AISYAH","P","13/05/2018","ASNAINI","3188911460","KELAS 2 A"],
+            ["ZANNUBA AISYAH HASNI HARAHAP","P","05/12/2017","NURSAIDAH DAULAY S.FARM","3171474662","KELAS 2 A"],
+            ["ZIHAN NURUL AINI SIREGAR","P","28/11/2017","SITI SANG SURYA HARAHAP","3175759002","KELAS 2 A"],
+            ["ZITA ADIFA HARAHAP","P","03/10/2017","DUDUNG SURYA HANDAYANI SIREGAR","3177761807","KELAS 2 A"],
+            ["ABDUL RA'UF AL SYAUQI CANIAGO","L","21/05/2018","TETTY KHAIRANI SIREGAR","","KELAS 2 B"],
+            ["ABIL HASAN AL KARIM TANGGUH","L","06/12/2017","ELFIYANTI","3171146018","KELAS 2 B"],
+            ["ADZRA ALBY MAHMUD SIREGAR","L","19/09/2017","TILUMAYAN HARAHAP","3170587476","KELAS 2 B"],
+            ["AHMAD FAUZI SIREGAR","L","28/02/2018","SRI MALAYATI HASIBUAN","3189080493","KELAS 2 B"],
+            ["AIDIL FITRAH SIREGAR","L","19/06/2018","ERLINAWATI HUTASUHUT","3182865995","KELAS 2 B"],
+            ["ANDHIKA GUNAWAN HARAHAP","L","12/05/2018","NURMAHARI SIREGAR","3188580935","KELAS 2 B"],
+            ["AQILA KHADIZAH HRP","P","24/10/2017","INTAN REZENI HSB","3179144064","KELAS 2 B"],
+            ["ASROYANI HARAHAP","P","04/10/2017","MIRNA HAIRANI SIREGAR","3174971840","KELAS 2 B"],
+            ["AULIA HASIBUAN","P","19/05/2018","NURAINA BATUBARA","3188122693","KELAS 2 B"],
+            ["AZKA ANUGRAH REHAN HASIBUAN","L","09/09/2017","ROSNA SIREGAR","3170627530","KELAS 2 B"],
+            ["FAQIH AL-ARSYA HARAHAP","L","28/08/2018","JUNIDAR SIREGAR","3181618624","KELAS 2 B"],
+            ["GIBRAN ELFIKY SIREGAR","L","22/09/2017","PITRI WULANDARI, AM.KEB","3177697660","KELAS 2 B"],
+            ["HASAN ABDUL ROSYID HARAHAP","L","12/11/2017","MEWAH SANTI HASIBUAN","3172794135","KELAS 2 B"],
+            ["IBRA ELFIKY SIREGAR","L","22/09/2017","PITRI WULANDARI, AM.KEB","3177368130","KELAS 2 B"],
+            ["KEILA RIZKI ROMAITO HASIBUAN","P","07/12/2017","DEVI HERIANI SIREGAR","3173156136","KELAS 2 B"],
+            ["KEYSHA NAIFATUL RIZKI HSB","P","02/10/2017","ANITA JULIANTHI","3172426755","KELAS 2 B"],
+            ["MAFAZA SUCI RAMADHANI","P","24/05/2018","HANI PURWANTI","3181069290","KELAS 2 B"],
+            ["MHD SAMER SANDY HARAHAP","L","24/04/2018","ROSLANIA HSB","3181866020","KELAS 2 B"],
+            ["MUHAMMAD RIVAI SIREGAR","L","24/03/2018","NUR HAYATI","3184448454","KELAS 2 B"],
+            ["NAZIFA NAHLA SIREGAR","P","18/11/2017","HENNI MAHYUNI HARAHAP","3171875108","KELAS 2 B"],
+            ["NAZWA RAMADANI DAULAY","P","22/06/2017","ELVI RODIA HRP","3172083676","KELAS 2 B"],
+            ["NUHA MUFIDAH SALIM SIMAMORA","P","21/03/2018","NURHANIFAH HARAHAP","3188546674","KELAS 2 B"],
+            ["PUTRA KARUNIA LASE","L","16/12/2017","INGATI ZENDATO","3176293379","KELAS 2 B"],
+            ["RAFKA AL GHANI HABIBI NASUTION","L","25/02/2018","HENNI TRISNAWATI HARAHAP","3182489216","KELAS 2 B"],
+            ["RAJA GITCAD SIREGAR","L","21/12/2018","SITI KHOIRIYAH HARAHAP","3189801584","KELAS 2 B"],
+            ["RISKON ILHAM ROKKAYA S","L","25/05/2018","ISRONIATI HARAHAP","3181429799","KELAS 2 B"],
+            ["ZIHAN MUNAJAH SIREGAR","P","02/10/2017","NUR AISYAH TANJUNG","3170170102","KELAS 2 B"],
+            ["ZIKO ALMAHIJA","L","26/05/2017","SITI NUR HOTIMAH","3177158451","KELAS 2 B"],
+            ["ABDUL ZAIDAN SIREGAR","L","31/08/2016","HERNI SARPINA LUBIS","3160663083","KELAS 3 A"],
+            ["ADEEVA NATASYA HASIBUAN","P","03/05/2017","EMILA YUSTINA","3178369623","KELAS 3 A"],
+            ["AHMAD IRMAN HABIBI","L","05/05/2017","NAM ELY NENSI PULUNGAN","3174072765","KELAS 3 A"],
+            ["AIDIL KHAMAL SATIA","L","01/07/2017","EKA RIZIANI HARAHAP","3171722601","KELAS 3 A"],
+            ["AIRA MYSHA INARA HARAHAP","P","31/10/2017","ARBAIYAH POHAN","3178120377","KELAS 3 A"],
+            ["AISY DAHLER DAULAY","L","20/03/2017","YUSRA NASUTION","3175685944","KELAS 3 A"],
+            ["APRILIA RAHMA YANI HARAHAP","P","02/04/2017","JULIANTI BR NASUTION","3176250482","KELAS 3 A"],
+            ["ARMADANSYAH HARAHAP","L","21/06/2017","HOTJULIANI SIREGAR","3170259307","KELAS 3 A"],
+            ["ATTHAR DIR NUH HASIAN NST","L","27/11/2016","SITI KHOLIJAH SIREGAR","3167602987","KELAS 3 A"],
+            ["AULIA AZKADINA HARAHAP","P","28/08/2016","VIVI YANTI SIREGAR","3166605378","KELAS 3 A"],
+            ["AZKHY RAMDI PRATAMA","L","13/04/2017","ADE IRMA SURYANI HRP","3179198857","KELAS 3 A"],
+            ["AZZAM KHALIF PUTRA HARAHAP","L","13/12/2016","MARLIYANI SIREGAR","3163312831","KELAS 3 A"],
+            ["BENI ARDIANSYAH HASIBUAN","L","15/11/2016","ERMINA TIARO DEWI","3164137121","KELAS 3 A"],
+            ["CANTIKA AURELIA JASMIN NASUTION","P","14/08/2017","SARIPA HANUM HARAHAP","3177715854","KELAS 3 A"],
+            ["DARNI ADHA PULUNGAN","P","09/09/2016","DESI RATNA DEWI","3163639372","KELAS 3 A"],
+            ["DINAR RAMADHAN HARAHAP","L","08/06/2017","ELMINA SARI DAULAY","3176194663","KELAS 3 A"],
+            ["ERICK AHSAN HSB","L","26/12/2015","ERMINAWATI DAULAY","3150902658","KELAS 3 A"],
+            ["ERWIN SYAH HARAHAP","L","26/01/2017","TETTI MAULINA SIREGAR","3176712185","KELAS 3 A"],
+            ["HANA HUMAIRA HARAHAP","P","21/01/2017","SARTINA WAHDINI SIREGAR","3176138005","KELAS 3 A"],
+            ["MEISYAH RAHMADANI HARAHAP","P","30/05/2017","SITI SUARNI NASUTION","3173584348","KELAS 3 A"],
+            ["NAILAH HABIBAH PUTRI","P","10/06/2016","NOVI SYAIFUL","3165189343","KELAS 3 A"],
+            ["NAYRA ANINDIYA HASIBUAN","P","21/01/2017","SITI RODIAH","173487620","KELAS 3 A"],
+            ["NUR HAFIZAH HASIBUAN","P","06/08/2017","SITI RAHMA SIREGAR","3174202764","KELAS 3 A"],
+            ["NUR TAZKIAH HARAHAP","P","28/10/2016","EFRINA RAYA","3168370453","KELAS 3 A"],
+            ["PRABU ANANDA AKNI SIREGAR","L","10/10/2017","NETY HERAWATI","3174117590","KELAS 3 A"],
+            ["PUTRI","P","10/05/2017","NOPI HARAHAP","3176176330","KELAS 3 A"],
+            ["RAHMAD TRI SYAPUTRA SIREGAR","L","13/02/2017","RISKI MARLIA PASARIBUA","3177945238","KELAS 3 A"],
+            ["SHENA ARTIKA CORI HARAHA","P","31/07/2017","SITI SARIAH HASIBUAN","3173424074","KELAS 3 A"],
+            ["ZIA ALMAIRA SIREGAR","P","20/01/2017","LENI MARLINA","179719220","KELAS 3 A"],
+            ["ABDUL SALIM","L","26/08/2016","LILI YANTI","","KELAS 3 B"],
+            ["ADI WIJAYA SAPUTRA SIREGAR","L","09/09/2016","SITI AMINAH HASIBUAN","3161354080","KELAS 3 B"],
+            ["ADNAN AL-FAIZ","L","26/03/2017","ELFINAHARI HASIBUAN","3177944644","KELAS 3 B"],
+            ["AFIFAH RAHAYU SIREGAR","P","17/08/2017","INSAN SAKURA HSB","3179021673","KELAS 3 B"],
+            ["AFIZAH RIZKYA PULUNGAN","P","21/03/2017","NIRMALA","3173165184","KELAS 3 B"],
+            ["ARBY HARUN NURPRATAMA HARAHAP","L","20/10/2017","NURBINA SARI SIREGAR","3177639629","KELAS 3 B"],
+            ["ASSYFA PUTRI MEDINA HASIBUAN","P","27/09/2018","FATIMA SARI SIREGAR","3185844730","KELAS 3 B"],
+            ["AULIA ZAHRA HARAHAP","P","29/08/2016","KASMA SURIANI SIREGAR","3163737633","KELAS 3 B"],
+            ["DIAN YUANITA SIREGAR","P","23/07/2017","MAHYUNI HARAHAP","3172445562","KELAS 3 B"],
+            ["FATHIR ZAYN AHMAD SIREGAR","L","04/11/2016","FARHAN MEUTHIA","3164928234","KELAS 3 B"],
+            ["FAUZAN RAMADHAN","L","31/05/2017","SITI NURBAYA","3178374318","KELAS 3 B"],
+            ["FITRI ARSYILA HARAHAP","P","03/07/2017","AGITA MARIANTI SIMAMORA","3177253413","KELAS 3 B"],
+            ["HAFIZA SYAKIR SIREGAR","P","21/03/2017","ANNY KHOLILA HASIBUAN","3176581312","KELAS 3 B"],
+            ["JIHAN SARTIKA SIMAMORA","P","23/08/2017","JUWITA ANGGIAN SINAGA","3179051253","KELAS 3 B"],
+            ["KEYSA ALMEERA","P","14/07/2017","SRI SADLY","3177075411","KELAS 3 B"],
+            ["KHOIRUM ZIKRI SIREGAR","L","09/10/2016","IRA MAYASOPA","3166506446","KELAS 3 B"],
+            ["LESTI AYU SIREGAR","P","06/03/2016","ROSMAIDA PULUNGAN","3166943992","KELAS 3 B"],
+            ["M. RAFIF AL-FARIZI SIREGAR","L","12/05/2017","NUR SAKINAH","3172254366","KELAS 3 B"],
+            ["MAHMUD ADIB PRATAMA","L","24/01/2017","JULIANA FITRI SIREGAR","3174557181","KELAS 3 B"],
+            ["NAURA SAKILAH HASIBUAN","P","25/06/2017","NURHAYATI SIREGAR","3179535313","KELAS 3 B"],
+            ["NAYLA RIZKI AZZAHRA","P","21/08/2017","WINNI CAHYANA SIREGAR","3178628166","KELAS 3 B"],
+            ["PUTRI ASSYIFA","P","27/08/2017","NOPRIANI SIREGAR","3179643031","KELAS 3 B"],
+            ["RASID HERIANSYAH TAMBUNAN","L","28/06/2017","ITO ENJELINA HARAHAP","3173988879","KELAS 3 B"],
+            ["RAYHANI FADILLAH NASUTION","P","06/09/2016","NUR HIDAYAH","3160994328","KELAS 3 B"],
+            ["RAZKA ILUMINADO SIREGAR","L","22/09/2016","SITI HUSNIAH MANURUNG","3168898857","KELAS 3 B"],
+            ["REY ALFARIZI TANJUNG","L","12/08/2017","UBA ANNASARI HARAHAP","3171775886","KELAS 3 B"],
+            ["SUTAN MAHYIN","L","16/09/2016","UMMI KALSUM HARAHAP","3166356461","KELAS 3 B"],
+            ["SYAKILA ERGHA SYAFANA","P","10/10/2016","ERMIYATI LESTARI","3164820526","KELAS 3 B"],
+            ["ABDI PANE","L","01/02/2016","JERLIMA","3163841344","KELAS 3 C"],
+            ["AGUSTINAMORA HARAHAP","P","22/08/2017","RIZKA MUNAWWARAH","3173273941","KELAS 3 C"],
+            ["AQILA NAJAMATUL HAYAH HRP","P","21/10/2016","NURLINA SIREGAR","3164050651","KELAS 3 C"],
+            ["ARSA BILAH SIREGAR","P","25/08/2017","AGUSTINA HARONIA NASUTION","3172826655","KELAS 3 C"],
+            ["ASYIFA NURUL SIREGAR","P","31/08/2017","RASMIATI HARAHAP SAG","3179567637","KELAS 3 C"],
+            ["AZMYA NASIRA HARAHAP","P","17/02/2017","NURHIDAYAH TANJUNG","3177171137","KELAS 3 C"],
+            ["BAIM ADITIYA BAKTI PRAJA","L","15/05/2017","HARPINA HARAHAP","3170246666","KELAS 3 C"],
+            ["BALQIS ALMAIRA DAULAY","P","29/09/2016","IRNA AYUNI HARAHAP","3160925023","KELAS 3 C"],
+            ["EL - HAZIMA UFAIRA HASIBUAN","P","28/12/2017","NURHAMILAH HSB","3178929080","KELAS 3 C"],
+            ["FADIL IRWANSA","L","20/02/2017","JULI YANTI HARAHAP","3174343219","KELAS 3 C"],
+            ["IKHSAN FAZRI AKHIR SIREGAR","L","13/08/2017","APNI RAYANI","3176943266","KELAS 3 C"],
+            ["IRFAN YUSRAN HSB","L","15/11/2016","RATNA DEWI PASARIBU","3169044926","KELAS 3 C"],
+            ["ISA AGUSTINA HASIBUAN","P","13/08/2016","ROSIDA HARHAP","3164975416","KELAS 3 C"],
+            ["JOSUA TORESNALES","L","24/01/2017","RESMALIANA TURNIP","3174090254","KELAS 3 C"],
+            ["JUANDA AMIN HARAHAP","L","13/09/2016","RINAYANTI","3169960681","KELAS 3 C"],
+            ["KASIH PITALIA NAPITU","P","10/08/2017","MASLIANA PURBA","3179474393","KELAS 3 C"],
+            ["MHD. ZUL AZIZ DAULAY","L","04/07/2017","SYARI ASNI HASIBUAN","3172291990","KELAS 3 C"],
+            ["MUHAMMAD AMIRUL NIZAM SIREGAR","L","19/06/2017","RINA SALPITA LUBIS","3174365424","KELAS 3 C"],
+            ["MUHAMMAD HAPIS HARAHAP","L","21/03/2017","MARLINA","3178270065","KELAS 3 C"],
+            ["MUHAMMAD ROIF ANAQIE HARAHAP","L","27/06/2017","WIRDA FUJI LESTARI NASUTION","3179286145","KELAS 3 C"],
+            ["NAUMI HATI HARAHAP","P","12/04/2017","EFRINA SUSANTI PULUNGAN","3177932204","KELAS 3 C"],
+            ["NAYLA ANINDITA HASIBUAN","P","21/01/2017","SITI RODIAH","173487620","KELAS 3 C"],
+            ["NAZLA KHAIRANI NASUTION","P","27/09/2016","DESI MORINA SIREGAR","3169354947","KELAS 3 C"],
+            ["RISKIA AMORITA HARUMI HARAHAP","P","19/05/2017","MEGA WARNI POHAN","3177822598","KELAS 3 C"],
+            ["SAKKOT HAMONANGAN HARAHAP","L","01/11/2016","LISNA WATI HRP","3162232717","KELAS 3 C"],
+            ["SYAMSUL ARIFIN HARAHAP","L","03/04/2017","REVITAMALA HASIBUAN","3177224379","KELAS 3 C"],
+            ["YUSNIDAR DEWINKA YANTI DAULAY","P","16/02/2017","JUNI RAHMIATI SIREGAR","3178794233","KELAS 3 C"],
+            ["ZIKRAN AYYASY UMRAN DAULAY","L","19/01/2017","ROSINTA MARITO SIREGAR","3175018885","KELAS 3 C"],
+            ["ADAWIYA HARAHAP","P","10/12/2015","MAHDALENA HARAHAP","3154626536","KELAS 4 A"],
+            ["ALI AZHAR SIREGAR","L","01/02/2016","PUTRIANA HARAHAP","3169612513","KELAS 4 A"],
+            ["ALLY SYAH NIZAM PURBA","L","21/08/2016","YAFNI PRISTIWI SIREGAR","3160997266","KELAS 4 A"],
+            ["ALOGO LANGKIMAT HARAHAP","L","20/02/2016","RIA ANJELINA SIMAMORA","3161510429","KELAS 4 A"],
+            ["ANGGI HASNAINI HARAHAP","P","03/02/2016","ARBAIYAH POHAN","3160591427","KELAS 4 A"],
+            ["AZRIL ALFARIZQI SIREGAR","L","04/07/2016","ASRINA HARAHAP","3160047109","KELAS 4 A"],
+            ["DEWI LESTARI HRP","P","31/12/2014","RAMAYANA SIREGAR","142618288","KELAS 4 A"],
+            ["FAHREZI SIREGAR","L","24/10/2015","WILDA PUTRI RAHAYU","3156074371","KELAS 4 A"],
+            ["FAUZAN SHIHAB AL ZAMAN HARAHAP","L","25/05/2016","SAMSIDERNI SIREGAR","3169123227","KELAS 4 A"],
+            ["J. DANIEL SIREGAR","L","07/02/2016","MARIANA HASIBUAN","3162697630","KELAS 4 A"],
+            ["KARIMAH PUTRI NASUTION","P","09/01/2016","NUR AMINAH HARAHAP","3163132489","KELAS 4 A"],
+            ["LUTHFI ALGHAZALI P.N.MANIK","L","29/05/2016","ERLINDA WARNI RAMBE","3165073299","KELAS 4 A"],
+            ["MAULANA HATIM TANGGUH","L","14/02/2016","ELFIYANTI","3163116746","KELAS 4 A"],
+            ["MELINDA ASSYFA","P","09/01/2016","ROS MAIDA ARAHAP","3164108694","KELAS 4 A"],
+            ["MUHAMMAD FAJAR HARAHAP","L","16/05/2016","NURPAUJIAH SIREGAR","3160630821","KELAS 4 A"],
+            ["MUHAMMAD HAFIZ","L","29/07/2016","NURSIMA HASIBUAN","3167317482","KELAS 4 A"],
+            ["NAUFAL AZKA NST","L","16/08/2016","ZAKIYAH LUBIS","3166443224","KELAS 4 A"],
+            ["NAURA AMELIA SINURAT","P","03/04/2016","JUNI DAMA YANTI MARPAUNG","3163755290","KELAS 4 A"],
+            ["NINDI RAMADHANI HASIBUAN","P","30/06/2016","MINDA MORA RAMBE","3161607414","KELAS 4 A"],
+            ["NUR BINTAN SHOLIHAH HSB","P","30/04/2016","EKA MARLINA","3167790751","KELAS 4 A"],
+            ["PADHIL DAFFA HARAHAP","L","29/02/2016","SUSI SUSANTI SIREGAR","3164420684","KELAS 4 A"],
+            ["REYHAN SAHPUTRA TANJUNG","L","20/08/2016","UBA ANNASARI HARAHAP","3163438014","KELAS 4 A"],
+            ["SAKIRA BILQIS RAMBE","P","08/08/2015","NUR KHASANAH HUTASUHUT","3159767157","KELAS 4 A"],
+            ["SALSABILA HARAHAP","P","01/11/2015","NURMAHAJA PULUNGAN","158611591","KELAS 4 A"],
+            ["SYAKILA RAHMADANI HARAHAP","P","22/01/2016","ASMIDAR","3162732182","KELAS 4 A"],
+            ["ZAIDAN ALFARISY HARAHAP","L","20/02/2016","WINDA AGUSTINA SIREGAR","3166894787","KELAS 4 A"],
+            ["ABDI HALIM KHADAFI SIREGAR","L","14/03/2016","NELI KARTINI HARAHAP","3169090930","KELAS 4 B"],
+            ["ADLAN RIDO HASIBUAN","L","10/05/2016","ROSLAN","3167418709","KELAS 4 B"],
+            ["AHMAD ADZAN SHUBUH SIREGAR","L","22/05/2016","MASWIDA PULUNGAN","3162977053","KELAS 4 B"],
+            ["ALINA ELITIA HASIBUAN","P","22/05/2016","LINDA YULIATI TANJUNG","3165831165","KELAS 4 B"],
+            ["ANGGINA RAMADHANI SIREGAR","P","30/06/2016","SERI SONZA MAHRENI NASUTION","3163093657","KELAS 4 B"],
+            ["AUFAL NANDO SIREGAR","L","13/11/2015","AGUSTINA HARONIA NASUTION","3153764591","KELAS 4 B"],
+            ["BIMA SAKTI PUTRA TANJUNG","L","15/07/2016","ANNA CHOLILA SIREGAR","3160114099","KELAS 4 B"],
+            ["HAFIDZ TAMPAN SIREGAR","L","09/07/2015","HANNUM HARAHAP","3152728049","KELAS 4 B"],
+            ["HOTMAN PARIS SIREGAR","L","15/09/2016","JUGI HENTINA SIREGAR","3166623274","KELAS 4 B"],
+            ["IJABAH ROMAITO HARAHAP","P","20/07/2016","NURKHOLIJA SIREGAR","3167289411","KELAS 4 B"],
+            ["IMAM WAHYUDI","L","25/02/2016","LILI IDAWATI DLT","3168383317","KELAS 4 B"],
+            ["KENZIE MUADZAN DAULAY","L","28/06/2016","INTAN SARI BULAN HARAHAP","3161627466","KELAS 4 B"],
+            ["KEYZHA NAURA HARAHAP","P","11/06/2016","ELFI AGUSTINA DALIMUNTHE","3169210956","KELAS 4 B"],
+            ["MELODY FIKA BR MALAU","P","13/11/2015","IPONG BR RAJA GUK GUK","3159989141","KELAS 4 B"],
+            ["MIFTAHUL FAUZIAH","P","04/01/2016","IRNA SIREGAR","3167894178","KELAS 4 B"],
+            ["MOZA UMAIZAH TANJUNG","P","08/03/2016","ASRO SIREGAR","3166462875","KELAS 4 B"],
+            ["MUHAMMAD RIZKY SALAM HARAHAP","L","16/12/2015","ROMLAINI SIREGAR.","3150602030","KELAS 4 B"],
+            ["NAZLA KHOPIPAH HARAHAP","P","28/02/2016","ROSNIDA SIREGAR","3165871155","KELAS 4 B"],
+            ["PAQIH SIREGAR","L","10/02/2016","ERMIDA WATI HARAHAP","3168429268","KELAS 4 B"],
+            ["RAJA LUTHFI PRATAMA NAWAR","L","25/01/2016","SITI MARYAM HARAHAP","3160689071","KELAS 4 B"],
+            ["RASYIQAH ZAHRA PULUNGAN","P","22/08/2015","RAMONA SIREGAR","3158155677","KELAS 4 B"],
+            ["RINI ADELINA HASIBUAN","P","26/06/2016","INDAH JUNIATI HARAHAP","3168233004","KELAS 4 B"],
+            ["RIZKY RAMADHAN SIREGAR","L","05/07/2016","IDA ROYANI HARAHAP","3168983554","KELAS 4 B"],
+            ["RUKUN DAMAI SIREGAR","L","24/03/2016","ROYANI SIREGAR","3165180320","KELAS 4 B"],
+            ["ZAINAL HABIBI","L","02/01/2016","ROSLAINI TANJUNG","3167113287","KELAS 4 B"],
+            ["ABDUL HAFIZ HASIBUAN","L","20/05/2016","MARLINA HENI RITONGA, AM.KEB","3160492979","KELAS 4 C"],
+            ["AKIFA NAILA POHAN","P","23/08/2015","ANNISA FITRI HARAHAP","3158030515","KELAS 4 C"],
+            ["AKILAH PUTRI SIREGAR","P","29/06/2016","NOLA GUSTIA RINDAM DAULAY","3169222801","KELAS 4 C"],
+            ["AMIRA PERMATA SARI HASIBUAN","P","13/05/2016","DARLINA SARI HARAHAP","3169567488","KELAS 4 C"],
+            ["ANGGI DINARA PUTRI HABIBI NASUTION","P","25/07/2016","HENNI TRISNAWATI HARAHAP","3166100690","KELAS 4 C"],
+            ["ARYSA KHOIRO SIREGAR","P","16/03/2016","HENNI MAHYUNI HARAHAP","3168142865","KELAS 4 C"],
+            ["ASIFAH MURANDA SUBAKTI","P","11/05/2016","INDAH PERMATA SARI HASIBUAN","3169628245","KELAS 4 C"],
+            ["AZHARI ALAMSYAH TANJUNG","L","17/03/2015","NUR MAHARI HARAHAP","3150790298","KELAS 4 C"],
+            ["AZIZAH ADEEVA KHANZA NASUTION","P","29/01/2016","ADE IRMA SURYANI NASUTION","3163214859","KELAS 4 C"],
+            ["AZIZAH SAHRANI DALIMUNTHE","P","16/01/2016","LELY MARIATI HARAHAP","3168468405","KELAS 4 C"],
+            ["AZKA FARWANSYAH MUDA","L","03/06/2016","ZAHRIA FITRI HASIBUAN","3168305842","KELAS 4 C"],
+            ["AZKIA SARI SIREGAR","P","16/04/2016","DAHNIAR SIMBOLON","3162953442","KELAS 4 C"],
+            ["AZRIL ALFANDY SRG","L","13/03/2016","HOTNAULI HARAHAP","3162900672","KELAS 4 C"],
+            ["AZRIL YUSUF LUBIS","L","05/11/2015","MONCOT ADIANI","3151250998","KELAS 4 C"],
+            ["BAYEZID AL-FAKIH","L","12/07/2016","KELLYANA DAULAY, AM.KEB","3162198983","KELAS 4 C"],
+            ["DAFFA HILAL ISMAIL HASIBUAN","L","14/03/2016","NURAINA BATUBARA","3168931128","KELAS 4 C"],
+            ["DINAR FATHAN HASIBUAN","L","27/01/2016","INDAH LESTARI SIREGAR","3161142124","KELAS 4 C"],
+            ["FATHIYA AULIA NISA HARAHAP","P","20/06/2016","JUNIDAR SIREGAR","3164207782","KELAS 4 C"],
+            ["GADIS EMIA GINTING","P","28/06/2016","IRA AHMITA POHAN","3163539422","KELAS 4 C"],
+            ["NAZLA FAHIMA ZIKRA SIMAMORA","P","22/12/2015","NURHANIFAH HARAHAP","3153100062","KELAS 4 C"],
+            ["PUTRI AYUDIYA SIREGAR","P","28/12/2015","ELJI SUSANTI","3154333267","KELAS 4 C"],
+            ["PUTRI RAHMADANI HARAHAP","P","12/05/2016","ADE EMMIAYANA","3168848920","KELAS 4 C"],
+            ["WIRDA SALAMAH NAIFA","P","21/07/2016","ANISATUN AHYAN","3161342514","KELAS 4 C"],
+            ["YOSSI ARIANI SIREGAR","P","02/12/2015","ISRONIATI HARAHAP","3157801405","KELAS 4 C"],
+            ["ZIDANE HASIHOLAN","L","17/02/2017","CICI DERITA SIREGAR","3163869744","KELAS 4 C"],
+            ["AFIQA NAHDA DAULAY","P","14/06/2015","TIUR MAULIANI","3152549535","KELAS 5 A"],
+            ["AHMAD FADIL HARAHAP","L","10/04/2015","SITI SAHARA HASIBUAN","3150697695","KELAS 5 A"],
+            ["AKMAL ZAILANI POHAN","L","11/03/2015","SITI FATIMAH","3159452962","KELAS 5 A"],
+            ["ALI RAJAB SIMAMORA","L","16/05/2015","JUWITA ANGGIAN SINAGA","3151369049","KELAS 5 A"],
+            ["AMIRA NUR SALAMAH HASIBUAN","P","14/08/2015","SITI RAHMA SIREGAR","3159024140","KELAS 5 A"],
+            ["ARBISANIT SIR","L","11/02/2015","SITI AYSAH HRP","3150947438","KELAS 5 A"],
+            ["ASRAF ARRASYID SIREGAR","L","09/04/2015","SITI SANG SURYA HARAHAP","158333012","KELAS 5 A"],
+            ["AZRA AQILA HASIBUAN","P","29/05/2015","DERMIATI SIMANJUNTAK","3153237961","KELAS 5 A"],
+            ["DAFFA GUSTI RAHMAN HASIBUAN","L","06/05/2015","MUTIATUR RIBIHANI","3151646703","KELAS 5 A"],
+            ["ELSA FAHIRA DAULAY","P","28/11/2014","NOVA RINA SIREGAR","3146378415","KELAS 5 A"],
+            ["FANY SYAFITRI SIREGAR","P","18/05/2015","JURIATI HARAHAP","3150289615","KELAS 5 A"],
+            ["HAFIZ AZHARI HARAHAP","L","07/08/2015","NURHOLIDA DALIMUNTE","3156910920","KELAS 5 A"],
+            ["HAIKAL PARDA RIZKY SIREGAR","L","27/12/2014","SOUPI ANDRIANI HARAHAP","149735610","KELAS 5 A"],
+            ["ILHAM KURNIAWAN TANJUNG","L","16/05/2015","MARIA ULFA PANGGABEAN","3158807532","KELAS 5 A"],
+            ["IQBAL KHAIRUN NAFIS HARAHAP","L","10/05/2015","MASJULI ARNI HRP","3156819290","KELAS 5 A"],
+            ["IRFAN AZIZ SIREGAR","L","12/12/2015","APNI RAYANI BATUBARA S.PD","3153451026","KELAS 5 A"],
+            ["KAYLA MARITO SIHOTANG","P","08/12/2014","ROSMAYANTI HARAHAP","3145601651","KELAS 5 A"],
+            ["KHOIRUL FAZRI HARAHAP","L","01/02/2015","KASMINAR SGR","3157856174","KELAS 5 A"],
+            ["MHD. AZKA AL-AMIN HSB","L","09/05/2015","ANITA JULIANTHI","3150547299","KELAS 5 A"],
+            ["MUHAMMAD WAHID HAKAM HARAHAP","L","26/10/2014","EFRINA RAYA","3140742521","KELAS 5 A"],
+            ["NADZHIFAH WAHYUNI NAINGGOLAN","P","20/01/2015","EVITA MASTIANI PANE, S.PD","158614482","KELAS 5 A"],
+            ["NAGITA PUTRI DAULAY","P","06/07/2015","SAIDA MAYANTI HARAHAP","3156422233","KELAS 5 A"],
+            ["NUR HASANAH SIREGAR","P","08/12/2014","SAHRIANI POHAN","3142993210","KELAS 5 A"],
+            ["PADLI DALIMUNTHE","L","24/04/2015","NUR HAMIDAH SIREGAR","3159890108","KELAS 5 A"],
+            ["PUTRI MAHARANI SIMBOLON","P","27/07/2014","FATIMAH HOT AINI SIR","3141340781","KELAS 5 A"],
+            ["QIANDRA FITRI ENDERLAN SIR","P","12/08/2015","NURLAILAN HASIBUAN","3154930420","KELAS 5 A"],
+            ["RAHMA KAMILA HARAHAP","P","24/06/2015","AMNA MINTA SIREGAR","3153059020","KELAS 5 A"],
+            ["REZA ALFATHONA","L","15/01/2015","ARNITA","3150764852","KELAS 5 A"],
+            ["SIFA HUMAIRAH SIREGAR","P","06/09/2014","REHAMSA HARAHAP","3149392476","KELAS 5 A"],
+            ["THALITA RAFA KARIMAH DAULAY","P","23/10/2014","SRI WAHYUNI SIREGAR","3148853990","KELAS 5 A"],
+            ["TIRTA CASMITA HARAHAP","L","23/10/2014","NINA ASTINA HASIBUAN","3145939044","KELAS 5 A"],
+            ["TONDI WIJAYA SIREGAR","L","24/11/2014","YUSNIA","142290737","KELAS 5 A"],
+            ["UFAIRA ASSYABIYA RAFIFA","P","18/08/2015","WINNI CAHYANA SIREGAR","3159569221","KELAS 5 A"],
+            ["UWAIS FARHAN SIREGAR","L","16/07/2015","SAIBATUL ASLAMIYAH HARAHAP","3158861901","KELAS 5 A"],
+            ["YOGI ANDREAN","L","26/05/2015","ASPIANA SARI HASIBUAN","3150363911","KELAS 5 A"],
+            ["YUSRI FAHIMATUL ULUM HARAHAP","P","13/10/2015","SITI ANUN SIREGAR","3150554719","KELAS 5 A"],
+            ["ZAHRAN SHABIR POHAN","L","20/07/2014","ANNISA FITRI HARAHAP","3146341279","KELAS 5 A"],
+            ["ZULMI IKHWAN RAMBE","L","22/10/2015","SINTA ARIANI SIREGAR","3158797451","KELAS 5 A"],
+            ["ABDUL PAHRUL HARAHAP","L","28/02/2015","NURHAPSAH","3154528691","KELAS 5 B"],
+            ["ABIDAH AL MUTSIRO","P","05/09/2015","DEWI WARNI SIREGAR","3157145125","KELAS 5 B"],
+            ["ADRIAN KLEIVESEAN PURBA","L","01/11/2014","RIRIS MARITO BR SIMANJUNTAK","3141296688","KELAS 5 B"],
+            ["AFIQA UFAIRAH LUBIS","P","21/04/2015","MASRONA HSB","3157026599","KELAS 5 B"],
+            ["AHMAD FADHIL AL-JUMAR","L","20/03/2015","IMELDA NASUTION","3150437654","KELAS 5 B"],
+            ["AIDA FITRIAH SIMAMORA","P","27/06/2015","MORINA SARI HASIBUAN","3153160231","KELAS 5 B"],
+            ["AKBAR RIZKI BAGO","L","13/04/2015","ASMIDA SARI","3150832024","KELAS 5 B"],
+            ["ANGGINA PUTRI","P","24/11/2015","LILI ADIANI ZEBUA","3155552776","KELAS 5 B"],
+            ["AQILA SYIFAUL HANI SIREGAR","P","28/03/2015","ARMA AISYAH","3151678040","KELAS 5 B"],
+            ["AYU WANDIRA PULUNGAN","P","12/10/2014","SORI SITI HRP","3144162991","KELAS 5 B"],
+            ["BAYO SAMUDRA AL BAQI SIREGAR","L","22/10/2014","NOPIDA MASTIA HARAHAP","3142924919","KELAS 5 B"],
+            ["GILANG ADIANSYAH HARAHAP","L","11/01/2015","REVITAMALA HASIBUAN","3156520530","KELAS 5 B"],
+            ["HAFIZD MAHARDIKA","L","02/10/2014","SAIDA ISMA HASIBUAN","3147399948","KELAS 5 B"],
+            ["KHUMAIRAH AL-ATHIYAH HASIBUAN","P","14/06/2015","EVA SANTY RAMBE","3151320599","KELAS 5 B"],
+            ["M. RIZKI ANANDA SIREGAR","L","06/01/2015","SERI SONZA MAHRENI NASUTION","3150825592","KELAS 5 B"],
+            ["MARIA MERYRISKA","P","15/05/2015","LIDIYA DEVEGA SIRAIT","3154539668","KELAS 5 B"],
+            ["MHD. ERDOGAN HSB","L","09/06/2015","DAHNIATI SIREGAR","3150577186","KELAS 5 B"],
+            ["MUHAMMAD AGUS SALIM SIREGAR","L","04/08/2014","IKE MARIANI","3147761838","KELAS 5 B"],
+            ["MUHAMMAD DAFA SIREGAR","L","06/12/2014","SRI MALAYATI HASIBUAN","144980335","KELAS 5 B"],
+            ["MUHAMMAD RIZKY HASIBUAN","L","07/09/2015","NUR MAHAJA HARAHAP","3153304719","KELAS 5 B"],
+            ["MUHAMMAD ZIQRAN ALGAZALI HARAHAP","L","02/08/2014","NURHAIDA HASIBUAN","3149788501","KELAS 5 B"],
+            ["NASHIYAH MARWAH HARAHAP","P","13/02/2015","PATIMAH HASIBUAN","3154578269","KELAS 5 B"],
+            ["NAUFAL ALFARIZY HARAHAP","L","18/03/2015","NENY PITRIANI SIREGAR","3151510380","KELAS 5 B"],
+            ["NIDA HAFIFAH SIREGAR","P","17/09/2014","NUR AISYAH TANJUNG","3143270628","KELAS 5 B"],
+            ["NUR KHALIJAH HARAHAP","P","12/10/2014","ELFINAHARI HASIBUAN","3147427275","KELAS 5 B"],
+            ["PRIZKA AZZALEA ANORA POHAN","P","17/05/2015","EKA YUSNITA","3157014037","KELAS 5 B"],
+            ["PUSVITA SARI SIREGAR","P","10/05/2014","RISNA WATI DAULAY","3144343852","KELAS 5 B"],
+            ["QOIS ALMAHSURIN","L","03/05/2014","DEWI WARNI SIREGAR","3149509746","KELAS 5 B"],
+            ["RADHI ALFATIR SIREGAR","L","19/04/2015","KHAIRANI","3154950209","KELAS 5 B"],
+            ["RAJA NAPOSO HASIBUAN","L","29/12/2014","ARRIDA HELPI HARAHAP","3144400114","KELAS 5 B"],
+            ["SAPRIADI HRP","L","26/10/2014","SAINEM NASUTION","3145480009","KELAS 5 B"],
+            ["SHAFA SALSABILA HARAHAP","P","15/06/2015","HASNURITA SIREGAR","3157827948","KELAS 5 B"],
+            ["SRI MULYANI HASIBUAN","P","22/10/2014","RATNA DEWI PASARIBU","3142718483","KELAS 5 B"],
+            ["SUCI RAMADHANI SIREGAR","P","27/06/2015","ENTIANI HARAHAP","3150074590","KELAS 5 B"],
+            ["ABDUL FAHMI SIREGAR","L","18/08/2013","INSAN SAKURA HASIBUAN","139743568","KELAS 6 A"],
+            ["AGHIEL MUDA PRATAMA HSB","L","22/05/2013","ERMINAWATI DAULAY","132781702","KELAS 6 A"],
+            ["AISYAH HARAHAP","P","16/12/2013","ROMLAINI SIREGAR","3139927843","KELAS 6 A"],
+            ["ANDRA ASRIZAL","L","21/12/2013","ENNI ASWANI HUTASUHUT","3132846194","KELAS 6 A"],
+            ["APIQAH SYALWA SIREGAR","P","05/05/2014","SARI BULAN HRP","3143063593","KELAS 6 A"],
+            ["AQILA AMIRAH HARAHAP","P","23/08/2014","ELMINA SARI DAULAY","3149500662","KELAS 6 A"],
+            ["ASSYIFA KAYLA PUTRI SIREGAR","P","05/09/2013","SITI GAHARA HARAHAP","133783625","KELAS 6 A"],
+            ["DEA ANGGUN SIREGAR","P","07/12/2013","IDA SANTI HASIBUAN","3133530564","KELAS 6 A"],
+            ["EKRAL HARAHAP","L","05/09/2013","MARLIANI SIREGAR","139867078","KELAS 6 A"],
+            ["FADIL AKBAR DALIMUNTHE","L","23/07/2013","IDA ROYANI HARAHAP","3137878904","KELAS 6 A"],
+            ["HARIANSYAH NASUTION","L","05/01/2014","DESI MORINA SIREGAR","3141303726","KELAS 6 A"],
+            ["IHWAN SYAHPUTRA HARAHAP","L","07/11/2013","LINDA YANTI","3137219365","KELAS 6 A"],
+            ["KEISHA NAURA NADHIFA HARAHAP","P","30/11/2013","EFRINA SUSANTI PULUNGAN","3138457853","KELAS 6 A"],
+            ["KHOIRUL FUAD HASIBUAN","L","24/08/2013","FATIMA SARI SIREGAR","3134840302","KELAS 6 A"],
+            ["LAMORA AISYAH NASUTION","P","13/01/2014","ROSITO HASIBUAN","143424499","KELAS 6 A"],
+            ["MARWAH DAULAY","P","25/06/2014","IRMA KARTIKA HARAHAP","3146040938","KELAS 6 A"],
+            ["MHD. AFFANDI HARAHAP","L","12/02/2014","PATIMAH HASIBUAN","3147246761","KELAS 6 A"],
+            ["NADHIFA MAHIRA NASUTION","P","06/04/2014","ZAKIYAH LUBIS","3147533524","KELAS 6 A"],
+            ["PUTRI RAHMALIANI SIREGAR","P","03/01/2014","MAHYUNA DAULAY","3147950939","KELAS 6 A"],
+            ["RAHMAD LIL ALAMIN POHAN","L","17/09/2013","TIAWAN SIREGAR","3132878156","KELAS 6 A"],
+            ["RAISYA KHAIRA NAZWA HASIBUAN","P","01/02/2014","NILA SARI SIREGAR","142301693","KELAS 6 A"],
+            ["RANIA ALISSYA PUTRI S","P","23/08/2014","ISRONIATI HARAHAP","3142336668","KELAS 6 A"],
+            ["SUCI YANTI RANANDA","P","13/08/2011","PARSINEM","3119641399","KELAS 6 A"],
+            ["WINDY NADRA SALSABILA","P","19/11/2013","MASRIANA HARAHAP","3135615331","KELAS 6 A"],
+            ["YUSNI PERMATA HARAHAP","P","20/11/2013","NURMAHARI SIREGAR","132309359","KELAS 6 A"],
+            ["ABDILLAH AL-FAUZAN SIMBOLON","L","22/01/2014","IRMA SURIANI","3144702634","KELAS 6 B"],
+            ["AIZAR AL-FAZRI DALIMUNTHE","L","23/07/2014","SITI FAUZIAH HARAHAP","144988012","KELAS 6 B"],
+            ["ANNISA KHOIRIAH HASIBUAN","P","02/06/2014","MURNI DAHLENA","141048775","KELAS 6 B"],
+            ["AQILAH NAZHIFA HARAHAP","P","26/08/2014","NURPAUJIAH SIREGAR","3143005845","KELAS 6 B"],
+            ["ARSYIL RAHMAN NASUTION","L","15/04/2014","ROS MANIDAR SPD","3140717929","KELAS 6 B"],
+            ["AULIA NOVI YANTI HUTASUHUT","P","24/11/2013","PATIMAROS","3135422384","KELAS 6 B"],
+            ["BINTA RAMADANI SIREGAR","P","20/07/2014","SITI JAMIAH HARAHAP, S.PD","3146786518","KELAS 6 B"],
+            ["CAISAR HAMDANI AL-TAHER SIREGAR","L","10/10/2013","NETTY HERAWATI","3135268834","KELAS 6 B"],
+            ["FADHEL RAHMAT SYAHPUTRA TANJUNG","L","04/04/2014","MARIA ULFA PANGGABEAN","3140783319","KELAS 6 B"],
+            ["FAIZAH INDRY","P","18/04/2014","KHOLIZA NASUTION","3144614627","KELAS 6 B"],
+            ["HASAN ABDURRAHMAN HRP","L","10/09/2013","DESNORA SAHRIATY SIREGAR","3131334600","KELAS 6 B"],
+            ["HOTMAYSAROH HSB","P","10/06/2014","NUR HAYATI SIREGAR","3144062793","KELAS 6 B"],
+            ["IMEL PUTRI C TANJUNG","P","11/05/2014","EMMI YULINDA HASIBUAN","3141867943","KELAS 6 B"],
+            ["MARDIAH SIREGAR","P","08/08/2014","DONA SOPIA HARAHAP","3141544058","KELAS 6 B"],
+            ["MUHAMMAD SUTAN KHANAFI HASIBUAN","L","13/01/2014","ROSMALA NASUTION","3140889775","KELAS 6 B"],
+            ["NAUFAL AFKAR HASIBUAN","L","10/09/2013","MINDA MORA RAMBE","3134191676","KELAS 6 B"],
+            ["NAZRIL AMAS PRATAMA HASIBUAN","L","20/02/2014","INDAH LESTARI SIREGAR","3149211301","KELAS 6 B"],
+            ["NURUL DALISHA SIREGAR","P","23/08/2014","RINA SALPITA LUBIS","3149409520","KELAS 6 B"],
+            ["PAIS","L","16/06/2013","NEPI ERIDA","3135046659","KELAS 6 B"],
+            ["PUTRI MAIMUNAH SIHOTANG","P","09/05/2014","WITA SAHRANI HARAHAP","3140457200","KELAS 6 B"],
+            ["RAHMA MUFIDA NASUTION","P","12/06/2014","MASROIDA SIREGAR","3146985457","KELAS 6 B"],
+            ["RAHMAT TARMIZI HRP","L","11/04/2014","ASROINI PULUNGAN","3137946136","KELAS 6 B"],
+            ["SINTIA BELLA SIREGAR","P","03/10/2014","DASARI","3148331451","KELAS 6 B"],
+            ["SULTAN RAON SIREGAR","L","16/12/2013","NURAINI","132709984","KELAS 6 B"],
+            ["AFIKA ANASTASYA SIREGAR","P","25/12/2013","ANNY KHOLILA HASIBUAN","3136112197","KELAS 6 C"],
+            ["AFRAH AQILAH HARAHAP","P","11/12/2013","AGITA MARIANTI SIMAMORA","3132130547","KELAS 6 C"],
+            ["ALPIAN RIZKIE HARAHAP","L","22/04/2014","DEWI SAHRIA SIREGAR","3142579101","KELAS 6 C"],
+            ["ALYA KHANZA HARAHAP","P","05/07/2014","DIANA SARI SIREGAR","3143441672","KELAS 6 C"],
+            ["AMRI PRATAMA NASUTION","L","12/05/2014","RISKI ADE PUTRI HARAHAP","3147969195","KELAS 6 C"],
+            ["ARPAN SAFUTRA SIREGAR","L","29/12/2013","ROSMAIDA PULUNGAN","3137412884","KELAS 6 C"],
+            ["ARYA PRATAMA HRP","L","11/01/2014","DESTINA SARI","3147448942","KELAS 6 C"],
+            ["ASIA ZAHRA TANJUNG","P","10/02/2014","MISDARI YANTI HRP","149998863","KELAS 6 C"],
+            ["BILQIS UFAIRA GINTING","P","22/02/2014","IRA AHMITA POHAN","149354976","KELAS 6 C"],
+            ["DIANDRA AMIRA ERFA SIREGAR","P","20/02/2014","FARHAH MEUTHIA","149245218","KELAS 6 C"],
+            ["DINDA ALYA HASIBUAN","P","15/12/2013","TUKMADIAN NOPITA HARAHAP","135089862","KELAS 6 C"],
+            ["FADLAN HAMID HASIBUAN","L","13/10/2013","RULIATI SIREGAR","137063816","KELAS 6 C"],
+            ["FADLAN HANAFI NAPITUPULU","L","23/05/2014","SITI HELMI DAWANI HSB","149009332","KELAS 6 C"],
+            ["HABIB SIDDIQ ZUHAIRI","L","13/09/2014","EKA RIZIANI HARAHAP","3149525327","KELAS 6 C"],
+            ["HUMAIRA PUTRI KUSUMA HASIBUAN","P","11/10/2013","DEVI HERIANI SIREGAR","3138856803","KELAS 6 C"],
+            ["IRWAN HARAHAP","L","08/02/2014","LINDA YANTI","148726249","KELAS 6 C"],
+            ["LUADY AL RAIHAN DAULAY","L","20/05/2014","ENDANG STAURINA HASIBUAN","149319120","KELAS 6 C"],
+            ["MUHAMMAD PAUL HARAHAP","L","03/09/2013","HOTJULIANI SIREGAR","3135782785","KELAS 6 C"],
+            ["MUNA WAROH NASUTION","P","09/09/2013","RISNA SARI HUTASUHUT","3136471848","KELAS 6 C"],
+            ["NAILAH PERMATA HASIBUAN","P","19/01/2014","HUSNATUL FAUJIA HARAHAP","3140835252","KELAS 6 C"],
+            ["NAURA AQILA ZAHRA HASIBUAN","P","09/09/2013","DERMAWANTI SIREGAR","3131211692","KELAS 6 C"],
+            ["NAZIAH NAILA SIREGAR","P","04/10/2013","PUTRIANA HARAHAP","3133743725","KELAS 6 C"],
+            ["SYAKIRA KHAIRUNNISA HARAHAP","P","21/04/2014","SARTINA WAHDINI SIREGAR","3147392798","KELAS 6 C"]
         ];
 
         // Konversi Data ke Object untuk memudahkan filtering
@@ -1236,6 +1417,92 @@
             nisn: item[4],
             kelas: item[5]
         }));
+
+        // --- DATA GALERI (Album) ---
+        const galleryData = {
+            'kbm': {
+                title: 'Kegiatan Belajar Mengajar',
+                images: [
+                    'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1427504746696-ea5abd7dfea7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'kelas': {
+                title: 'Suasana Ruang Kelas',
+                images: [
+                    'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'perpus': {
+                title: 'Kunjungan Perpustakaan',
+                images: [
+                    'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'olahraga': {
+                title: 'Olahraga & Futsal',
+                images: [
+                    'https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'guru': {
+                title: 'Diskusi Guru',
+                images: [
+                    'https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'kebersamaan': {
+                title: 'Kebersamaan Siswa',
+                images: [
+                    'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'upacara': {
+                title: 'Upacara Bendera',
+                images: [
+                    'https://images.unsplash.com/photo-1517971071642-34a2d3ecc6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'pramuka': {
+                title: 'Kegiatan Pramuka',
+                images: [
+                    'https://images.unsplash.com/photo-1534643960519-11ad79bc19df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'drumband': {
+                title: 'Drum Band SDN 0201',
+                images: [
+                    'https://images.unsplash.com/photo-1564596377317-1906969e7be9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1514525253440-b393452e8d26?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'prestasi': {
+                title: 'Prestasi Siswa',
+                images: [
+                    'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                    'https://images.unsplash.com/photo-1565514020176-db93d56d78b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'lab': {
+                title: 'Lab Komputer',
+                images: [
+                    'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            },
+            'taman': {
+                title: 'Belajar di Taman',
+                images: [
+                    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+                ]
+            }
+        };
 
         // Render Awal saat Halaman Dimuat
         document.addEventListener('DOMContentLoaded', () => {
@@ -1343,31 +1610,58 @@
             window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
         }
 
-        // --- GALERI INTERAKTIF (LIGHTBOX) ---
-        function openGallery(src, caption) {
+        // --- GALERI INTERAKTIF (LIGHTBOX ALBUM) ---
+        let currentAlbumImages = [];
+        let currentImageIndex = 0;
+
+        function openGallery(key) {
+            const album = galleryData[key];
+            if (!album) return;
+
+            currentAlbumImages = album.images;
+            currentImageIndex = 0; // Mulai dari foto pertama
+            
             const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
             const cap = document.getElementById('lightbox-caption');
             
-            img.src = src;
-            cap.innerText = caption;
+            cap.innerText = album.title;
+            updateLightboxImage();
             
             lightbox.classList.remove('hidden');
-            // Small timeout to allow display:block to apply before opacity transition if we added one, 
-            // but simple toggle is enough for "no code changes" constraint spirit.
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            
+            img.src = currentAlbumImages[currentImageIndex];
+            
+            if (currentAlbumImages.length > 1) {
+                counter.innerText = `${currentImageIndex + 1} / ${currentAlbumImages.length}`;
+                counter.classList.remove('hidden');
+            } else {
+                counter.classList.add('hidden');
+            }
+        }
+
+        function changeImage(direction) {
+            if (currentAlbumImages.length <= 1) return;
+
+            currentImageIndex += direction;
+
+            if (currentImageIndex >= currentAlbumImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = currentAlbumImages.length - 1;
+            }
+
+            updateLightboxImage();
         }
 
         function closeGallery() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.add('hidden');
         }
-        
-        // Close lightbox on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeGallery();
-            }
-        });
     </script>
 </body>
 </html>
